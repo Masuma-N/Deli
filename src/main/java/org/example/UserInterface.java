@@ -11,7 +11,7 @@ public class UserInterface {
     private void displayHome() {
 
 
-        System.out.println("Welcome to our Deli/shop! How may I help you? ");
+        System.out.println("Welcome to our Deli!  \n How may I help you? ");
 
         System.out.println("\n \n Our Menu: ");
         //inputs will display the menu
