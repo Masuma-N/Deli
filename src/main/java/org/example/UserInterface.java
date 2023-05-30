@@ -22,7 +22,7 @@ public class UserInterface {
         switch(Userinput){
             case "1" ->startOrder();
             case "2" -> {
-                System.out.println("Goodbye, have a nice day!");
+                System.out.println("Goodbye, have a nice day! Please");
                 System.exit(0);
             }
             default -> System.out.println();
