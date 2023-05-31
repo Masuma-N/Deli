@@ -47,21 +47,21 @@ public class UserInterface {
                     // Add Sandwich
                     addSandwich();
                     break;
-                //case 2:
+                case 2:
                 // Add Drink
-                // addDrink();
-//                   / break;
-                // case 3:
-                // Add Chips
-                // addChips();
-                // break;
-                //case 4:
+                addDrink();
+//                   break;
+                 case 3:
+                    // Add Chips
+                 addChips();
+                 break;
+                case 4:
                 // Checkout
-                //checkout();
-                // break;
-                //case 0:
+                checkout();
+                 break;
+                case 0:
                 // Cancel Order
-                //cancelOrder();
+                cancelOrder();
                 //break;
                 default:
                     System.out.println("Invalid choice. Please try again.");
@@ -101,4 +101,14 @@ public class UserInterface {
         System.out.println("Selected sandwich size: " + sandwichSize + "\"");
         System.out.println("Sandwich price: $" + sandwichPrice);
     }
-}
+    private static void addDrink() {
+
+    }
+    private static void addChips() {
+    }
+    private static void checkout() {
+    }
+    private static void cancelOrder() {
+    }
+
+    }
