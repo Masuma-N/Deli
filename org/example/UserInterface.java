@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class UserInterface {
-    private static final double[] SANDWICH_SIZE = {4, 8, 12};
-    private static final double[] SANDWICH_SIZE_PRICES = {5.50, 7.00, 8.50};
-    private static List<String> orderEntries = new ArrayList<>();
+    private static final double[] SANDWICH_SIZE = {4, 8, 12}; // Available sandwich sizes in inches
+    private static final double[] SANDWICH_SIZE_PRICES = {5.50, 7.00, 8.50}; // Prices for each sandwich size
+    private static List<String> orderEntries = new ArrayList<>(); // List to store order entries
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -48,21 +48,21 @@ public class UserInterface {
                     addSandwich();
                     break;
                 case 2:
-                // Add Drink
-                addDrink();
-//                   break;
-                 case 3:
+                    // Add Drink
+                    addDrink();
+                    // break;
+                case 3:
                     // Add Chips
-                 addChips();
-                 break;
+                    addChips();
+                    break;
                 case 4:
-                // Checkout
-                checkout();
-                 break;
+                    // Checkout
+                    checkout();
+                    break;
                 case 0:
-                // Cancel Order
-                cancelOrder();
-                //break;
+                    // Cancel Order
+                    cancelOrder();
+                    //break;
                 default:
                     System.out.println("Invalid choice. Please try again.");
                     break;
@@ -101,14 +101,16 @@ public class UserInterface {
         System.out.println("Selected sandwich size: " + sandwichSize + "\"");
         System.out.println("Sandwich price: $" + sandwichPrice);
     }
+
     private static void addDrink() {
-
+        // TODO: Implement adding a drink to the order
     }
+
     private static void addChips() {
-    }
-    private static void checkout() {
-    }
-    private static void cancelOrder() {
+        // TODO: Implement adding chips to the order
     }
 
+    private static void checkout() {
+        // TODO: Implement the order checkout
     }
+}
