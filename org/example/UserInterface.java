@@ -132,7 +132,7 @@ public class UserInterface {
             }
 
             // Prompt for meat selection
-            System.out.println("Select the meats (separated by commas if multiple):");
+            System.out.println("Select the meats :");
             System.out.println("1) Steak");
             System.out.println("2) Ham");
             System.out.println("3) Salami");
@@ -174,7 +174,7 @@ public class UserInterface {
             boolean extraMeat = extraMeatChoice.equalsIgnoreCase("y");
 
             // Prompt for cheese selection
-            System.out.println("Select the cheese (separated by commas if multiple):");
+            System.out.println("Select the cheese :");
             System.out.println("1) American");
             System.out.println("2) Provolone");
             System.out.println("3) Cheddar");
@@ -203,9 +203,39 @@ public class UserInterface {
     private static void addDrink() {
         // Implement the logic to add a drink to the order
         System.out.println("Adding a drink to the order...");
+
+            // Prompt for drink size
+            System.out.println("Select the drink size:");
+            System.out.println("1) Small");
+            System.out.println("2) Medium");
+            System.out.println("3) Large");
+            int sizeChoice = scanner.nextInt();
+            String size;
+            switch (sizeChoice) {
+                case 1:
+                    size = "Small";
+                    break;
+                case 2:
+                    size = "Medium";
+                    break;
+                case 3:
+                    size = "Large";
+                    break;
+                default:
+                    System.out.println("Invalid choice. Cancelling drink addition.");
+                    return;
+            }
+
+            // Add the drink to the orderEntries list
+            String drink = "Drink: " + size;
+            orderEntries.add(drink);
+
+            System.out.println("Drink added to the order!");
+        }
+
         // You can prompt the user for drink details and add them to the orderEntries list
         // Example: orderEntries.add("Drink: [details]");
-    }
+
 
     private static void addChips() {
         // Implement the logic to add chips to the order
