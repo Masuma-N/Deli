@@ -25,7 +25,7 @@ public class UserInterface {
                 System.out.println("Goodbye, have a nice day! Please..");
                 System.exit(0);
             }
-            default -> System.out.println();
+            default -> System.out.println("Invalid input");
 
         }
 
