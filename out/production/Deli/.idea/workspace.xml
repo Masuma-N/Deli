@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="414e2768-6b8d-4914-8d59-78e64a894e61" name="Changes" comment="initial commit" />
+    <list default="true" id="414e2768-6b8d-4914-8d59-78e64a894e61" name="Changes" comment="initial commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Deli/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Deli/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Deli/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Deli/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Deli/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Deli/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Deli/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Deli/Documents/UML_diagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Deli/org/example/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Deli/org/example/Order.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Deli/org/example/UserInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Deli/pom.xml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +29,6 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -138,70 +151,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685542618561</updated>
     </task>
-    <task id="LOCAL-00011" summary="initial commit">
-      <created>1685543349212</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1685543349213</updated>
-    </task>
-    <task id="LOCAL-00012" summary="initial commit">
-      <created>1685544307084</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1685544307085</updated>
-    </task>
-    <task id="LOCAL-00013" summary="initial commit">
-      <created>1685546865113</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1685546865113</updated>
-    </task>
-    <task id="LOCAL-00014" summary="initial commit">
-      <created>1685556259825</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1685556259826</updated>
-    </task>
-    <task id="LOCAL-00015" summary="initial commit">
-      <created>1685556549171</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1685556549172</updated>
-    </task>
-    <task id="LOCAL-00016" summary="initial commit">
-      <created>1685556653235</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1685556653236</updated>
-    </task>
-    <task id="LOCAL-00017" summary="initial commit">
-      <created>1685557927266</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1685557927267</updated>
-    </task>
-    <task id="LOCAL-00018" summary="initial commit">
-      <created>1685560004170</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1685560004170</updated>
-    </task>
-    <task id="LOCAL-00019" summary="initial commit">
-      <created>1685561711515</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1685561711515</updated>
-    </task>
-    <option name="localTasksCounter" value="20" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
