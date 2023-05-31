@@ -5,14 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="414e2768-6b8d-4914-8d59-78e64a894e61" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Bread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Cheese.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Chips.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Drink.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Meat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/OrderFileManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/RegularToppings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Sandwich.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/SandwichSize.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Sauce.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,6 +46,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "maricarmen",
+    "last_opened_file_path": "C:/LearnToCode_Examples/CoffeeShop",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2"
@@ -42,10 +61,19 @@
       <option name="presentableId" value="Default" />
       <updated>1685466593810</updated>
     </task>
+    <task id="LOCAL-00001" summary="Modified.">
+      <created>1685496956334</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685496956334</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge branch 'maricarmen' of https://github.com/Masuma-N/Deli into maricarmen&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/org/example/Main.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'maricarmen' of https://github.com/Masuma-N/Deli into maricarmen&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/org/example/Main.java" />
+    <MESSAGE value="Modified." />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified." />
   </component>
 </project>
