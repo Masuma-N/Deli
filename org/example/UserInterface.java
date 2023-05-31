@@ -50,7 +50,7 @@ public class UserInterface {
                 case 2:
                     // Add Drink
                     addDrink();
-                    // break;
+                    break;
                 case 3:
                     // Add Chips
                     addChips();
@@ -59,10 +59,10 @@ public class UserInterface {
                     // Checkout
                     checkout();
                     break;
-                //case 0:
+                case 0:
                     // Cancel Order
-                   // cancelOrder();
-                    //break;
+                    cancelOrder();
+                    break;
                 default:
                     System.out.println("Invalid choice. Please try again.");
                     break;
@@ -97,76 +97,63 @@ public class UserInterface {
         }
         double sandwichSize = SANDWICH_SIZE[sizeChoice - 1];
         double sandwichPrice = SANDWICH_SIZE_PRICES[sizeChoice - 1];
+        // Prompt for bread selection
+        System.out.println("Select the bread:");
+        for (BreadChoice breadChoice : BreadChoice.values()) {
+            System.out.println(breadChoice.ordinal() + 1 + ") " + breadChoice.getDisplayName());
+        }
+        int breadChoiceIndex = scanner.nextInt();
+        if (breadChoiceIndex < 1 || breadChoiceIndex > BreadChoice.values().length) {
+            System.out.println("Invalid choice. Cancelling sandwich addition.");
+            return;
+        }
+        BreadChoice selectedBread = BreadChoice.values()[breadChoiceIndex - 1];
+        double breadPrice = selectedBread.getPrice();
 
-        //System.out.println("Selected sandwich size: " + sandwichSize + "\"");
-        //System.out.println("Sandwich price: $" + sandwichPrice);
 
         // Prompt for meat selection
         System.out.println("Select the meats:");
-        System.out.println("1) Steak");
-        System.out.println("2) Ham");
-        System.out.println("3) Salami");
-        System.out.println("4) Roast Beef");
-        System.out.println("5) Chicken");
-        System.out.println("6) Bacon");
+        for (MeatChoice meatChoice : MeatChoice.values()) {
+            System.out.println(meatChoice.ordinal() + 1 + ") " + meatChoice.getDisplayName());
+        }
         String meatsInput = scanner.next();
         String[] meatChoices = meatsInput.split(",");
         List<String> meats = new ArrayList<>();
         double meatPrice = 0.0;
 
         for (String meatChoice : meatChoices) {
-            switch (meatChoice.trim()) {
-                case "1":
-                    meats.add("Steak");
-                    meatPrice += getMeatPriceForSize(sandwichSize);
-                    break;
-                case "2":
-                    meats.add("Ham");
-                    meatPrice += getMeatPriceForSize(sandwichSize);
-                    break;
-                case "3":
-                    meats.add("Salami");
-                    meatPrice += getMeatPriceForSize(sandwichSize);
-                    break;
-                case "4":
-                    meats.add("Roast Beef");
-                    meatPrice += getMeatPriceForSize(sandwichSize);
-                    break;
-                case "5":
-                    meats.add("Chicken");
-                    meatPrice += getMeatPriceForSize(sandwichSize);
-                    break;
-                case "6":
-                    meats.add("Bacon");
-                    meatPrice += getMeatPriceForSize(sandwichSize);
-                    break;
-                default:
-                    System.out.println("Invalid choice. Cancelling sandwich addition.");
-                    return;
+            int choice = Integer.parseInt(meatChoice.trim());
+            if (choice >= 1 && choice <= MeatChoice.values().length) {
+                MeatChoice selectedMeat = MeatChoice.values()[choice - 1];
+                meats.add(selectedMeat.getDisplayName());
+                meatPrice += getMeatPriceForSize(selectedMeat.getPrice(), sandwichSize);
+            } else {
+                System.out.println("Invalid choice. Cancelling sandwich addition.");
+                return;
             }
         }
 
-
         System.out.println("Selected sandwich size: " + sandwichSize + "\"");
         System.out.println("Sandwich price: $" + sandwichPrice);
+        System.out.println("Selected bread: " + selectedBread.getDisplayName());
+        System.out.println("Bread price: $" + breadPrice);
+
         System.out.println("Selected meats: " + meats);
         System.out.println("Meat price: $" + meatPrice);
     }
 
-
-    private static double getMeatPriceForSize(double sandwichSize) {
+    private static double getMeatPriceForSize(double meatPrice, double sandwichSize) {
         if (sandwichSize == 4) {
-            return 1.00;  // Meat price for 4-inch sandwich
+            return meatPrice * 1.00;  // Meat price for 4-inch sandwich
         } else if (sandwichSize == 8) {
-            return 2.00;  // Meat price for 8-inch sandwich
+            return meatPrice * 2.00;  // Meat price for 8-inch sandwich
         } else if (sandwichSize == 12) {
-            return 3.00;  // Meat price for 12-inch sandwich
+            return meatPrice * 3.00;  // Meat price for 12-inch sandwich
         } else {
             System.out.println("Invalid sandwich size. Default meat price will be used.");
-            return 1.00;  // Default meat price
+            return meatPrice * 1.00;  // Default meat price
         }
     }
-
 
     private static void addDrink() {
         // TODO: Implement adding a drink to the order
@@ -178,5 +165,9 @@ public class UserInterface {
 
     private static void checkout() {
         // TODO: Implement the order checkout
+    }
+
+    private static void cancelOrder() {
+        System.out.println("Order canceled.");
     }
 }
