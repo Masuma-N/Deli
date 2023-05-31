@@ -97,7 +97,7 @@ public class UserInterface {
             return;
         }
         double sandwichSize = SANDWICH_SIZE[sizeChoice - 1];
-        double sandwichPrice = SANDWICH_SIZE_PRICES[sizeChoice - 1];
+        double sandwichSizePrice = SANDWICH_SIZE_PRICES[sizeChoice - 1];
         // Prompt for bread selection
         System.out.println("Select the bread:");
         for (BreadChoice breadChoice : BreadChoice.values()) {
@@ -134,17 +134,18 @@ public class UserInterface {
         }
 
         System.out.println("Selected sandwich size: " + sandwichSize + "\"");
-        System.out.println("Sandwich price: $" + sandwichPrice);
+        System.out.println("Sandwich size price: $" + sandwichSizePrice);
         System.out.println("Selected bread: " + selectedBread.getDisplayName());
         System.out.println("Bread price: $" + breadPrice);
         System.out.println("Selected meats: " + meats);
         System.out.println("Meat price: $" + meatPrice);
 
-        double sandwichTotalPrice = sandwichPrice + breadPrice + meatPrice;
+        double sandwichTotalPrice = sandwichSizePrice + breadPrice + meatPrice;
         orderEntries.add("Sandwich - Size: " + sandwichSize + "\" - $" + sandwichTotalPrice);
         totalPrice += sandwichTotalPrice;
 
         System.out.println("Sandwich added to the order.");
+        System.out.println("Total price of sandwich is " +totalPrice);
     }
 
     private static double getMeatPriceForSize(double meatPrice, double sandwichSize) {
