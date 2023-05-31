@@ -53,14 +53,14 @@ public class UserInterface {
                     // Add Chips
                     addChips();
                     break;
-                case 4:
+                //case 4:
                     // Checkout
-                    checkout();
-                    break;
-                case 0:
+                   //checkout();
+                   // break;
+                //case 0:
                     // Cancel Order
-                    cancelOrder();
-                    break;
+                    //cancelOrder();
+                    //break;
                 default:
                     System.out.println("Invalid choice. Please try again.");
                     break;
@@ -81,181 +81,144 @@ public class UserInterface {
     }
 
     private static void addSandwich() {
-        // Implement the logic to add a sandwich to the order
         System.out.println("Adding a sandwich to the order...");
-            // Prompt for sandwich size
-            System.out.println("Select the sandwich size:");
-            System.out.println("1) 4\"");
-            System.out.println("2) 8\"");
-            System.out.println("3) 12\"");
-            int sizeChoice = scanner.nextInt();
-            String size;
-            switch (sizeChoice) {
-                case 1:
-                    size = "4\"";
+
+        // Prompt for sandwich size
+        System.out.println("Select the sandwich size:");
+        System.out.println("1) 4\"");
+        System.out.println("2) 8\"");
+        System.out.println("3) 12\"");
+        int sizeChoice = scanner.nextInt();
+        double sizePrice;
+        switch (sizeChoice) {
+            case 1:
+                sizePrice = 5.50;
+                break;
+            case 2:
+                sizePrice = 7.00;
+                break;
+            case 3:
+                sizePrice = 8.50;
+                break;
+            default:
+                System.out.println("Invalid choice. Cancelling sandwich addition.");
+                return;
+        }
+
+        // Prompt for bread type
+        System.out.println("Select the bread type:");
+        System.out.println("1) White");
+        System.out.println("2) Wheat");
+        System.out.println("3) Rye");
+        System.out.println("4) Wrap");
+        int breadChoice = scanner.nextInt();
+        double breadPrice;
+        switch (breadChoice) {
+            case 1:
+                breadPrice = 0.0;
+                break;
+            case 2:
+                breadPrice = 0.0;
+                break;
+            case 3:
+                breadPrice = 0.0;
+                break;
+            case 4:
+                breadPrice = 0.0;
+                break;
+            default:
+                System.out.println("Invalid choice. Cancelling sandwich addition.");
+                return;
+        }
+
+        // Prompt for meat selection
+        System.out.println("Select the meats:");
+        System.out.println("1) Steak");
+        System.out.println("2) Ham");
+        System.out.println("3) Salami");
+        System.out.println("4) Roast Beef");
+        System.out.println("5) Chicken");
+        System.out.println("6) Bacon");
+        String meatsInput = scanner.next();
+        String[] meatChoices = meatsInput.split(",");
+        List<String> meats = new ArrayList<>();
+        double meatPrice = 0.0;
+        for (String meatChoice : meatChoices) {
+            switch (meatChoice.trim()) {
+                case "1":
+                    meats.add("Steak");
+                    meatPrice += 1.00;
                     break;
-                case 2:
-                    size = "8\"";
+                case "2":
+                    meats.add("Ham");
+                    meatPrice += 1.00;
                     break;
-                case 3:
-                    size = "12\"";
+                case "3":
+                    meats.add("Salami");
+                    meatPrice += 1.00;
+                    break;
+                case "4":
+                    meats.add("Roast Beef");
+                    meatPrice += 1.00;
+                    break;
+                case "5":
+                    meats.add("Chicken");
+                    meatPrice += 1.00;
+                    break;
+                case "6":
+                    meats.add("Bacon");
+                    meatPrice += 1.00;
                     break;
                 default:
                     System.out.println("Invalid choice. Cancelling sandwich addition.");
                     return;
-            }
-
-            // Prompt for bread type
-            System.out.println("Select the bread type:");
-            System.out.println("1) White");
-            System.out.println("2) Wheat");
-            System.out.println("3) Rye");
-            System.out.println("4) Wrap");
-            int breadChoice = scanner.nextInt();
-            String bread;
-            switch (breadChoice) {
-                case 1:
-                    bread = "White";
-                    break;
-                case 2:
-                    bread = "Wheat";
-                    break;
-                case 3:
-                    bread = "Rye";
-                    break;
-                case 4:
-                    bread = "Wrap";
-                    break;
-                default:
-                    System.out.println("Invalid choice. Cancelling sandwich addition.");
-                    return;
-            }
-
-            // Prompt for meat selection
-            System.out.println("Select the meats :");
-            System.out.println("1) Steak");
-            System.out.println("2) Ham");
-            System.out.println("3) Salami");
-            System.out.println("4) Roast Beef");
-            System.out.println("5) Chicken");
-            System.out.println("6) Bacon");
-            String meatsInput = scanner.next();
-            String[] meatChoices = meatsInput.split(",");
-            List<String> meats = new ArrayList<>();
-            for (String meatChoice : meatChoices) {
-                switch (meatChoice.trim()) {
-                    case "1":
-                        meats.add("Steak");
-                        break;
-                    case "2":
-                        meats.add("Ham");
-                        break;
-                    case "3":
-                        meats.add("Salami");
-                        break;
-                    case "4":
-                        meats.add("Roast Beef");
-                        break;
-                    case "5":
-                        meats.add("Chicken");
-                        break;
-                    case "6":
-                        meats.add("Bacon");
-                        break;
-                    default:
-                        System.out.println("Invalid choice. Cancelling sandwich addition.");
-                        return;
-                }
-            }
-
-            // Prompt for additional meat option
-            System.out.println("Add extra meat? (y/n)");
-            String extraMeatChoice = scanner.next();
-            boolean extraMeat = extraMeatChoice.equalsIgnoreCase("y");
-
-            // Prompt for cheese selection
-            System.out.println("Select the cheese :");
-            System.out.println("1) American");
-            System.out.println("2) Provolone");
-            System.out.println("3) Cheddar");
-            System.out.println("4) Swiss");
-            String cheesesInput = scanner.next();
-            String[] cheeseChoices = cheesesInput.split(",");
-            List<String> cheeses = new ArrayList<>();
-            for (String cheeseChoice : cheeseChoices) {
-                switch (cheeseChoice.trim()) {
-                    case "1":
-                        cheeses.add("American");
-                        break;
-                    case "2":
-                        cheeses.add("Provolone");
-                        break;
-                    case "3":
-
-                        // You can prompt the user for sandwich details and add them to the orderEntries list
-                        // Example: orderEntries.add("Sandwich: [details]");
-                }
             }
         }
 
+        // Prompt for additional meat option
+        System.out.println("Add extra meat? (y/n)");
+        String extraMeatChoice = scanner.next();
+        boolean extraMeat = extraMeatChoice.equalsIgnoreCase("y");
+        if (extraMeat) {
+            meatPrice += 0.50;
+        }
+        // Prompt for cheese selection
+        System.out.println("Select the cheese:");
+        System.out.println("1) American ($0.50)");
+        System.out.println("2) Provolone ($0.75)");
+        System.out.println("3) Swiss ($0.75)");
+        int cheeseChoice = scanner.nextInt();
+        double cheesePrice;
+        switch (cheeseChoice) {
+            case 1:
+                cheesePrice = 0.50;
+                break;
+            case 2:
+                cheesePrice = 0.75;
+                break;
+            case 3:
+                cheesePrice = 0.75;
+                break;
+            default:
+                System.out.println("Invalid choice. Cancelling sandwich addition.");
+                return;
+        }
 
+// Calculate the total price
+        double totalPrice = sizePrice + breadPrice + meatPrice + cheesePrice;
 
+// Display the order details
+        System.out.println("Sandwich added to the order:");
+        System.out.println("Size: " + sizeChoice);
+        System.out.println("Bread: " + breadChoice);
+        System.out.println("Meats: " + String.join(", ", meats));
+        System.out.println("Extra Meat: " + extraMeat);
+        System.out.println("Cheese: " + cheeseChoice);
+        System.out.println("Total Price: $" + totalPrice);
+
+    }
     private static void addDrink() {
-        // Implement the logic to add a drink to the order
-        System.out.println("Adding a drink to the order...");
-
-            // Prompt for drink size
-            System.out.println("Select the drink size:");
-            System.out.println("1) Small");
-            System.out.println("2) Medium");
-            System.out.println("3) Large");
-            int sizeChoice = scanner.nextInt();
-            String size;
-            switch (sizeChoice) {
-                case 1:
-                    size = "Small";
-                    break;
-                case 2:
-                    size = "Medium";
-                    break;
-                case 3:
-                    size = "Large";
-                    break;
-                default:
-                    System.out.println("Invalid choice. Cancelling drink addition.");
-                    return;
-            }
-
-            // Add the drink to the orderEntries list
-            String drink = "Drink: " + size;
-            orderEntries.add(drink);
-
-            System.out.println("Drink added to the order!");
-        }
-
-        // You can prompt the user for drink details and add them to the orderEntries list
-        // Example: orderEntries.add("Drink: [details]");
-
-
-    private static void addChips() {
-        // Implement the logic to add chips to the order
-        System.out.println("Adding chips to the order...");
-        // You can prompt the user for chip details and add them to the orderEntries list
-        // Example: orderEntries.add("Chips: [details]");
-    }
-
-    private static void checkout() {
-        // Implement the logic to display the order details and calculate the total price
-        System.out.println("Checkout - Order Details:");
-        // Display the orderEntries list with the newest entries first
-        // Calculate and display the total price of the order
-        // Example:
-        // for (int i = orderEntries.size() - 1; i >= 0; i--) {
-        //     System.out.println(orderEntries.get(i));
-        // }
-        // System.out.println("Total Price: $[totalPrice]");
-    }
-
-    private static void cancelOrder() {
-    }
 }
+    private static void addChips() {
+    }
+    }
