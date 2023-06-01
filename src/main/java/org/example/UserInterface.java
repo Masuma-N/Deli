@@ -169,7 +169,7 @@ public class UserInterface {
             int choice = Integer.parseInt(cheeseChoice.trim());
             if (choice >= 1 && choice <= CheeseChoice.values().length) {
                 CheeseChoice selectedCheese = CheeseChoice.values()[choice - 1];
-                meats.add(selectedCheese.getDisplayName());
+                cheeses.add(selectedCheese.getDisplayName());
                 cheesePrice += getCheesePriceForSize(selectedCheese.getPrice(), sandwichSize);
 
             } else {
