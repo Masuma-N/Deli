@@ -1,8 +1,13 @@
 package org.example;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.stream.Collectors;
 
 public class UserInterface {
     private static final double[] SANDWICH_SIZE = {4, 8, 12}; // Available sandwich sizes in inches
@@ -118,34 +123,84 @@ public class UserInterface {
         }
         String meatsInput = scanner.next();
         String[] meatChoices = meatsInput.split(",");
-        List<String> meats = new ArrayList<>();
+        List<MeatChoice> selectedMeats = new ArrayList<>();
         double meatPrice = 0.0;
 
         for (String meatChoice : meatChoices) {
             int choice = Integer.parseInt(meatChoice.trim());
             if (choice >= 1 && choice <= MeatChoice.values().length) {
                 MeatChoice selectedMeat = MeatChoice.values()[choice - 1];
-                meats.add(selectedMeat.getDisplayName());
+                selectedMeats.add(selectedMeat);
                 meatPrice += getMeatPriceForSize(selectedMeat.getPrice(), sandwichSize);
             } else {
                 System.out.println("Invalid choice. Cancelling sandwich addition.");
                 return;
             }
         }
+        // Calculate cost of extra meat based on sandwich size
+        double extraMeatCost = 0.0;
+        if (sandwichSize == 4) {
+            extraMeatCost = 0.50;
+        } else if (sandwichSize == 8) {
+            extraMeatCost = 1.00;
+        } else if (sandwichSize == 12) {
+            extraMeatCost = 1.50;
+        }
 
-        System.out.println("Selected sandwich size: " + sandwichSize + "\"");
-        System.out.println("Sandwich size price: $" + sandwichSizePrice);
-        System.out.println("Selected bread: " + selectedBread.getDisplayName());
-        System.out.println("Bread price: $" + breadPrice);
-        System.out.println("Selected meats: " + meats);
-        System.out.println("Meat price: $" + meatPrice);
 
-        double sandwichTotalPrice = sandwichSizePrice + breadPrice + meatPrice;
-        orderEntries.add("Sandwich - Size: " + sandwichSize + "\" - $" + sandwichTotalPrice);
-        totalPrice += sandwichTotalPrice;
+// Prompt for additional meat option
+        System.out.println("Add extra meat? (y/n)");
+        String extraMeatChoice = scanner.next();
+        boolean extraMeat = extraMeatChoice.equalsIgnoreCase("y");
+        if (extraMeat) {
+            meatPrice += extraMeatCost;
+        }
 
-        System.out.println("Sandwich added to the order.");
-        System.out.println("Total price of sandwich is " +totalPrice);
+        // Prompt for sauce selection
+        System.out.println("Select the sauces (comma-separated):");
+        for (SauceChoice sauceChoice : SauceChoice.values()) {
+            System.out.println(sauceChoice.ordinal() + 1 + ") " + sauceChoice.getSauce());
+        }
+        String saucesInput = scanner.next();
+        String[] sauceChoices = saucesInput.split(",");
+        List<SauceChoice> selectedSauces = new ArrayList<>();
+        double saucePrice = 0.0;
+
+        for (String sauceChoice : sauceChoices) {
+            int choice = Integer.parseInt(sauceChoice.trim());
+            if (choice >= 1 && choice <= SauceChoice.values().length) {
+                SauceChoice selectedSauce = SauceChoice.values()[choice - 1];
+                selectedSauces.add(selectedSauce);
+                saucePrice += selectedSauce.getPrice();
+            } else {
+                System.out.println("Invalid choice. Cancelling sandwich addition.");
+                return;
+            }
+        }
+        String selectedMeatsString = selectedMeats.stream()
+                .map(MeatChoice::getDisplayName)
+                .collect(Collectors.joining(", "));
+
+        String selectedSaucesString = selectedSauces.stream()
+                .map(SauceChoice::getSauce)
+                .collect(Collectors.joining(", "));
+
+            System.out.println("Selected sandwich size: " + sandwichSize + "\" Inches");
+            System.out.println("Sandwich size price: $" + sandwichSizePrice);
+            System.out.println("Selected bread: " + selectedBread.getDisplayName());
+            System.out.println("Bread price: $" + breadPrice);
+            System.out.println("Selected meats: " + selectedMeatsString);
+            System.out.println("Meat price: $" + meatPrice);
+            System.out.println("Selected sauces: " + selectedSaucesString);
+            System.out.println("Sauce included: $" + saucePrice);
+
+            double sandwichTotalPrice = sandwichSizePrice + breadPrice + meatPrice + saucePrice;
+            orderEntries.add("Sandwich - Size: " + sandwichSize + "\" - $" + sandwichTotalPrice);
+            totalPrice += sandwichTotalPrice;
+
+            System.out.println("Sandwich added to the order.");
+            System.out.println("Total price of sandwich is $" + totalPrice);
+
     }
 
     private static double getMeatPriceForSize(double meatPrice, double sandwichSize) {
@@ -201,14 +256,29 @@ public class UserInterface {
     }
 
     private static void checkout() {
-        System.out.println("Order Summary:");
-        for (String entry : orderEntries) {
-            System.out.println(entry);
+        // ...existing code...
+
+        // Generate unique file name using timestamp
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
+        String timestamp = now.format(formatter);
+        String fileName = "order_" + timestamp + ".csv";
+
+        // Save order to CSV file
+        try (FileWriter fileWriter = new FileWriter(fileName)) {
+            for (String entry : orderEntries) {
+                fileWriter.append(entry).append("\n");
+            }
+            fileWriter.append("Total Price: $").append(String.valueOf(totalPrice));
+            System.out.println("Order saved to the CSV file: " + fileName);
+        } catch (IOException e) {
+            System.out.println("An error occurred while saving the order to the CSV file.");
         }
-        System.out.println("Total Price: $" + totalPrice);
     }
+
 
     private static void cancelOrder() {
         System.out.println("Order canceled.");
     }
 }
+

@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="414e2768-6b8d-4914-8d59-78e64a894e61" name="Changes" comment="initial commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/SauceChoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/example/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/example/UserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Deli/org/example/UserInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Deli/org/example/UserInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org/example/BreadChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/BreadChoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org/example/DrinkChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DrinkChoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org/example/MeatChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MeatChoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org/example/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org/example/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +41,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="version1" />
+        <entry key="$PROJECT_DIR$" value="karma" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,19 +54,22 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "project.structure.last.edited": "Modules",
+    "git-widget-placeholder": "maricarmen__",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\LearnToCode_Capstones\Deli\src\main\java" />
       <recent name="$PROJECT_DIR$/Documents" />
     </key>
   </component>
