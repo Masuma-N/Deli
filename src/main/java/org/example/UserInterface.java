@@ -1,5 +1,9 @@
 package org.example;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.SQLOutput;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -18,13 +22,13 @@ public class UserInterface {
 
     private void displayHome() {
 
-        System.out.println("\u001B[33m ___  ___ _    ___     ___ ___ ___  _   _ ___     \u001B[0m");
-        System.out.println("\u001B[33m|   \\| __| |  |_ _|__ / __|_ _/ _ \\| | | / __|    \u001B[0m");
-        System.out.println("\u001B[33m| |) | _|| |__ | |___| (__ | | (_) | |_| \\__ \\    \u001B[0m");
-        System.out.println("\u001B[33m|___/|___|____|___|__ \\___|___\\___/_\\___/|___/___ \u001B[0m");
-        System.out.println("\u001B[33m / __| /_\\ | \\| |   \\ \\    / /_ _/ __| || | __/ __|\u001B[0m");
-        System.out.println("\u001B[33m \\__ \\/ _ \\| .` | |) \\ \\/\\/ / | | (__| __ | _|\\__ \\\u001B[0m");
-        System.out.println("\u001B[33m |___/_/ \\_\\_|\\_|___/ \\_/\\_/ |___\\___|_||_|___|___/\u001B[0m");
+        System.out.println("\u001B[31m ___  ___ _    ___     ___ ___ ___  _   _ ___     \u001B[0m");
+        System.out.println("\u001B[31m|   \\| __| |  |_ _|__ / __|_ _/ _ \\| | | / __|    \u001B[0m");
+        System.out.println("\u001B[31m| |) | _|| |__ | |___| (__ | | (_) | |_| \\__ \\    \u001B[0m");
+        System.out.println("\u001B[31m|___/|___|____|___|__ \\___|___\\___/_\\___/|___/___ \u001B[0m");
+        System.out.println("\u001B[31m / __| /_\\ | \\| |   \\ \\    / /_ _/ __| || | __/ __|\u001B[0m");
+        System.out.println("\u001B[31m \\__ \\/ _ \\| .` | |) \\ \\/\\/ / | | (__| __ | _|\\__ \\\u001B[0m");
+        System.out.println("\u001B[31m |___/_/ \\_\\_|\\_|___/ \\_/\\_/ |___\\___|_||_|___|___/\u001B[0m");
         System.out.println("\n Welcome to our Deli!  \n Choose an option from our menu. ");
 
         System.out.println("\n \n Our Menu: ");
@@ -86,26 +90,53 @@ public class UserInterface {
     }
 
     private void checkout() {
-        System.out.println("Order Summary");
-        for (String entry : orderEntries) {
-            System.out.println(entry);
+
+        // Generate unique file name using timestamp
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
+        String timestamp = now.format(formatter);
+        String fileName = "order_" + timestamp + ".csv";
+
+        // Save order to CSV file
+        try (FileWriter fileWriter = new FileWriter(fileName)) {
+            for (String entry : orderEntries) {
+                fileWriter.append(entry).append("\n");
+            }
+            fileWriter.append("Total Price: $").append(String.valueOf(totalPrice));
+            System.out.println("Order saved to the CSV file: " + fileName);
+        } catch (IOException e) {
+            System.out.println("An error occurred while saving the order to the CSV file.");
         }
-        System.out.println("Total Price: $" + totalPrice);
+        // Clear order entries and total price
+        orderEntries.clear();
+        totalPrice = 0.0;
+
+        // Go back to the main screen
+        displayHome();
+
     }
 
-    private void addChips() {
-        System.out.println("Would you like to add chips to your order? (Y/N)");
 
-        String choice = scanner.next();
-        if (choice.equalsIgnoreCase("Y")) {
-            orderEntries.add("Chips - $1.50");
-            totalPrice += 1.50;
-            System.out.println("Chips added to the order.");
-            System.out.println("It will be an extra $1.50.");
-        } else {
-            System.out.println("Chips not added to the order.");
+    private void addChips() {
+
+        System.out.println("Choose the chips to add to your order:");
+
+        String[] chipsOptions = {"Regular", "BBQ", "Salt and Vinegar", "Sour Cream and Onion"};
+        double[] chipsPrices = {1.50, 1.75, 1.75, 1.75};
+
+        for (int i = 0; i < chipsOptions.length; i++) {
+            System.out.println((i + 1) + ". " + chipsOptions[i] + " ($" + chipsPrices[i] + ")");
         }
 
+        int choice = scanner.nextInt();
+        if (choice >= 1 && choice <= chipsOptions.length) {
+            orderEntries.add(chipsOptions[choice - 1] + " - $" + chipsPrices[choice - 1]);
+            totalPrice += chipsPrices[choice - 1];
+            System.out.println(chipsOptions[choice - 1] + " added to the order.");
+            System.out.println("It will be an extra $" + chipsPrices[choice - 1] + ".");
+        } else {
+            System.out.println("Invalid choice. Chips not added to the order.");
+        }
     }
 
     private void addDrink() {
@@ -262,14 +293,14 @@ public class UserInterface {
 
 
     private void displayOptions() {
-        System.out.println("------------- Order Screen----------");
-        System.out.println("Choose an option:");
-        System.out.println("1) Add Sandwich");
-        System.out.println("2) Add Drink");
-        System.out.println("3) Add Chips");
-        System.out.println("4) Checkout");
-        System.out.println("0) Cancel Order");
-        System.out.println("-------------------------------------");
+        System.out.println("\u001B[34m------------- Order Screen----------\u001B[0m");
+        System.out.println("\u001B[34mChoose an option:\u001B[0m");
+        System.out.println("\u001B[34m1) Add Sandwich\u001B[0m");
+        System.out.println("\u001B[34m2) Add Drink\u001B[0m");
+        System.out.println("\u001B[34m3) Add Chips\u001B[0m");
+        System.out.println("\u001B[34m4) Checkout\u001B[0m");
+        System.out.println("\u001B[34m0) Cancel Order\u001B[0m");
+        System.out.println("\u001B[34m-------------------------------------\u001B[0m");
 
     }
 

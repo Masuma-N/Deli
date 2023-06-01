@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="414e2768-6b8d-4914-8d59-78e64a894e61" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/BreadChoice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CheeseChoice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/DrinkChoice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/MeatChoice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Receipt.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ReceiptManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685536787594</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="LOGO">
+      <created>1685635126041</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1685635126041</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,6 +134,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="LOGO" />
+    <option name="LAST_COMMIT_MESSAGE" value="LOGO" />
   </component>
 </project>
