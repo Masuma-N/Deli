@@ -5,11 +5,11 @@ public enum SauceChoice {
     MUSTARD("Mustard", 0),
     KETCHUP("Ketchup", 0),
     RANCH("Ranch", 0),
-    THOUSANDISLANDS("Thousand Islands", 0),
-    VINAGRETTE("Vinaigrette", 0);
+    THOUSAND_ISLANDS("Thousand Islands", 0),
+    VINAIGRETTE("Vinaigrette", 0);
 
-    private String sauce;
-    private double price;
+    private final String sauce;
+    private final double price;
 
     SauceChoice(String sauce, double price) {
         this.sauce = sauce;
