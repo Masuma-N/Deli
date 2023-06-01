@@ -301,6 +301,13 @@ public class UserInterface {
         } catch (IOException e) {
             System.out.println("An error occurred while saving the order to the CSV file.");
         }
+        // Clear order entries and total price
+        orderEntries.clear();
+        totalPrice = 0.0;
+
+        // Go back to the main screen
+        displayHome();
+
     }
 
 
