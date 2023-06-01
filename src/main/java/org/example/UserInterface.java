@@ -22,13 +22,13 @@ public class UserInterface {
 
     private void displayHome() {
 
-        System.out.println("\u001B[31m ___  ___ _    ___     ___ ___ ___  _   _ ___     \u001B[0m");
-        System.out.println("\u001B[31m|   \\| __| |  |_ _|__ / __|_ _/ _ \\| | | / __|    \u001B[0m");
-        System.out.println("\u001B[31m| |) | _|| |__ | |___| (__ | | (_) | |_| \\__ \\    \u001B[0m");
-        System.out.println("\u001B[31m|___/|___|____|___|__ \\___|___\\___/_\\___/|___/___ \u001B[0m");
-        System.out.println("\u001B[31m / __| /_\\ | \\| |   \\ \\    / /_ _/ __| || | __/ __|\u001B[0m");
-        System.out.println("\u001B[31m \\__ \\/ _ \\| .` | |) \\ \\/\\/ / | | (__| __ | _|\\__ \\\u001B[0m");
-        System.out.println("\u001B[31m |___/_/ \\_\\_|\\_|___/ \\_/\\_/ |___\\___|_||_|___|___/\u001B[0m");
+        System.out.println("\u001B[38;2;0;255;0m ___  ___ _    ___     ___ ___ ___  _   _ ___     \u001B[0m");
+        System.out.println("\u001B[38;2;0;255;0m|   \\| __| |  |_ _|__ / __|_ _/ _ \\| | | / __|    \u001B[0m");
+        System.out.println("\u001B[38;2;0;255;0m| |) | _|| |__ | |___| (__ | | (_) | |_| \\__ \\    \u001B[0m");
+        System.out.println("\u001B[38;2;0;255;0m|___/|___|____|___|__ \\___|___\\___/_\\___/|___/___ \u001B[0m");
+        System.out.println("\u001B[38;2;0;255;0m / __| /_\\ | \\| |   \\ \\    / /_ _/ __| || | __/ __|\u001B[0m");
+        System.out.println("\u001B[38;2;0;255;0m \\__ \\/ _ \\| .` | |) \\ \\/\\/ / | | (__| __ | _|\\__ \\\u001B[0m");
+        System.out.println("\u001B[38;2;0;255;0m |___/_/ \\_\\_|\\_|___/ \\_/\\_/ |___\\___|_||_|___|___/\u001B[0m");
         System.out.println("\n Welcome to our Deli!  \n Choose an option from our menu. ");
 
         System.out.println("\n \n Our Menu: ");
@@ -73,6 +73,9 @@ public class UserInterface {
                     // Checkout
                     checkout();
                     break;
+                case 5:
+                    //Signature sandwich
+                    addSignatureSandwich();
                 case 0:
                     // Cancel Order
                     cancelOrder();
@@ -84,6 +87,28 @@ public class UserInterface {
         } while (choice != 0);
 
         scanner.close();
+    }
+
+    private void addSignatureSandwich() {
+        System.out.println("Select the signature sandwich:");
+        for (SignatureSandwichChoice sandwichChoice : SignatureSandwichChoice.values()) {
+            System.out.println(sandwichChoice.ordinal() + 1 + ") " + sandwichChoice.getDisplayName() + " - $" + sandwichChoice.getPrice());
+        }
+
+        int choice = scanner.nextInt();
+        if (choice < 1 || choice > SignatureSandwichChoice.values().length) {
+            System.out.println("Invalid choice. Signature sandwich not added to the order.");
+            return;
+        }
+
+        SignatureSandwichChoice selectedSandwich = SignatureSandwichChoice.values()[choice - 1];
+        double sandwichPrice = selectedSandwich.getPrice();
+
+        orderEntries.add("Signature Sandwich - " + selectedSandwich.getDisplayName() + " - $" + sandwichPrice);
+        totalPrice += sandwichPrice;
+
+        System.out.println("Selected sandwich: " + selectedSandwich.getDisplayName() + " - $" + sandwichPrice);
+        System.out.println("Signature sandwich added to the order.");
     }
 
     private void cancelOrder() {
@@ -292,7 +317,7 @@ public class UserInterface {
     }
 
     private double getCheesePriceForSize(double price, double sandwichSize) {
-        double cheesePrice;
+        double cheesePrice = 0;
         if (sandwichSize == 4) {
             return cheesePrice;  // Meat price for 4-inch sandwich
         } else if (sandwichSize == 8) {
@@ -304,6 +329,7 @@ public class UserInterface {
             return cheesePrice * 1.00;  // Default meat price
         }
     }
+
 
 
     private static double getMeatPriceForSize(double meatPrice, double sandwichSize) {
@@ -331,6 +357,8 @@ public class UserInterface {
         System.out.println("\u001B[34m3) Add Chips\u001B[0m");
         System.out.println("\u001B[34m4) Checkout\u001B[0m");
         System.out.println("\u001B[34m0) Cancel Order\u001B[0m");
+        System.out.println("OR");
+        System.out.println("\u001B[34m5) Add Signature Sandwich\u001B[0m");
         System.out.println("\u001B[34m-------------------------------------\u001B[0m");
 
     }
