@@ -157,20 +157,16 @@ public class UserInterface {
         }
 
 
-        // Prompt for cheese selection based on bread size
+        // Prompt the user for cheese selection
         System.out.println("Select the cheese:");
         System.out.println("1) American ");
         System.out.println("2) Provolone ");
         System.out.println("3) Cheddar ");
         System.out.println("4 Swiss");
 
+
+        // Calculate cost of Cheese based on sandwich size
         int cheeseChoice = scanner.nextInt();
-
-
-
-
-
-        // Calculate cost of extra meat based on sandwich size
         double cheesePrice = 0.0;
         if (sandwichSize == 4) {
             cheesePrice = 0.75;
