@@ -155,6 +155,49 @@ public class UserInterface {
             meatPrice += extraMeatCost;
         }
 
+        //prompt for cheese
+        System.out.println("Select the cheese:");
+        for (CheeseChoice cheeseChoice : CheeseChoice.values()) {
+            System.out.println(cheeseChoice.ordinal() + 1 + ") " + cheeseChoice.getDisplayName());
+        }
+        String cheeseInput = scanner.next();
+        String[] cheeseChoices = meatsInput.split(",");
+        List<String> cheeses = new ArrayList<>();
+        double cheesePrice = 0.0;
+
+        for (String cheeseChoice : cheeseChoices) {
+            int choice = Integer.parseInt(cheeseChoice.trim());
+            if (choice >= 1 && choice <= CheeseChoice.values().length) {
+                CheeseChoice selectedCheese = CheeseChoice.values()[choice - 1];
+                meats.add(selectedCheese.getDisplayName());
+                cheesePrice += getCheesePriceForSize(selectedCheese.getPrice(), sandwichSize);
+
+            } else {
+                System.out.println("Invalid choice. Cancelling sandwich addition.");
+                return;
+            }
+        }
+        // Calculate cost of extra cheese based on sandwich size
+        double extraCheeseCost = 0.0;
+        if (sandwichSize == 4) {
+            extraCheeseCost = 0.30;
+        } else if (sandwichSize == 8) {
+            extraCheeseCost = 0.60;
+        } else if (sandwichSize == 12) {
+            extraCheeseCost = 0.90;
+        }
+
+// Prompt for additional meat option
+        System.out.println("Add extra cheese? (y/n)");
+        String extraCheeseChoice = scanner.next();
+        boolean extraCheese = extraMeatChoice.equalsIgnoreCase("y");
+        if (extraMeat) {
+            cheesePrice += extraCheeseCost;
+        }
+
+
+
+
 
 
 
@@ -164,9 +207,10 @@ public class UserInterface {
         System.out.println("Selected bread: " + selectedBread.getDisplayName());
         System.out.println("Bread price: $" + breadPrice);
         System.out.println("Selected meats: " + meats);
+        System.out.println("Selected cheeses: " + cheeses);
         System.out.println("Meat price: $" + meatPrice);
 
-        double sandwichTotalPrice = sandwichSizePrice + breadPrice + meatPrice;
+        double sandwichTotalPrice = sandwichSizePrice + breadPrice + meatPrice+cheesePrice;
         orderEntries.add("Sandwich - Size: " + sandwichSize + "\" - $" + sandwichTotalPrice);
         totalPrice += sandwichTotalPrice;
 
@@ -187,6 +231,19 @@ public class UserInterface {
         }
     }
 
+
+    private static double getCheesePriceForSize(double cheesePrice, double sandwichSize) {
+        if (sandwichSize == 4) {
+            return cheesePrice;  // Meat price for 4-inch sandwich
+        } else if (sandwichSize == 8) {
+            return cheesePrice + 0.75;  // Meat price for 8-inch sandwich
+        } else if (sandwichSize == 12) {
+            return cheesePrice + 1.50;  // Meat price for 12-inch sandwich
+        } else {
+            System.out.println("Invalid sandwich size.");
+            return cheesePrice * 1.00;  // Default meat price
+        }
+    }
     private static void addDrink() {
         System.out.println("Adding a drink to the order...");
 
