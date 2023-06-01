@@ -116,6 +116,7 @@ public class UserInterface {
         BreadChoice selectedBread = BreadChoice.values()[breadChoiceIndex - 1];
         double breadPrice = selectedBread.getPrice();
 
+         //TODO: MARICARMEN : Adjusted for formatting from here.
         // Prompt for meat selection
         System.out.println("Select the meats:");
         for (MeatChoice meatChoice : MeatChoice.values()) {
@@ -136,7 +137,7 @@ public class UserInterface {
                 System.out.println("Invalid choice. Cancelling sandwich addition.");
                 return;
             }
-        }
+        }//TODO: To here.
         // Calculate cost of extra meat based on sandwich size
         double extraMeatCost = 0.0;
         if (sandwichSize == 4) {
@@ -155,7 +156,7 @@ public class UserInterface {
         if (extraMeat) {
             meatPrice += extraMeatCost;
         }
-
+        //TODO: MARICARMEN: Adding Sauces selection
         // Prompt for sauce selection
         System.out.println("Select the sauces (comma-separated):");
         for (SauceChoice sauceChoice : SauceChoice.values()) {
@@ -177,6 +178,9 @@ public class UserInterface {
                 return;
             }
         }
+        //TODO: MARICARMEN:
+        // Added selectedMeatsString and selectedSaucesString to format the String better.
+        //Copy from Here.
         String selectedMeatsString = selectedMeats.stream()
                 .map(MeatChoice::getDisplayName)
                 .collect(Collectors.joining(", "));
@@ -200,6 +204,7 @@ public class UserInterface {
 
             System.out.println("Sandwich added to the order.");
             System.out.println("Total price of sandwich is $" + totalPrice);
+            //TODO: To here.
 
     }
 
