@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -84,7 +85,6 @@ public class UserInterface {
     }
 
     private static void addSandwich() {
-        System.out.println("Adding a sandwich to the order...");
 
         // Prompt for sandwich size
         System.out.println("Select the sandwich size:");
@@ -158,15 +158,29 @@ public class UserInterface {
 
 
         // Prompt the user for cheese selection
-        System.out.println("Select the cheese:");
-        System.out.println("1) American ");
-        System.out.println("2) Provolone ");
-        System.out.println("3) Cheddar ");
-        System.out.println("4 Swiss");
+        System.out.println("Select the Cheese:");
+        for (CheeseChoice cheeseChoice : CheeseChoice.values()) {
+            System.out.println((cheeseChoice.ordinal() + 1) + ") " + cheeseChoice.getDisplayName());
+        }
+
+        String cheeseInput = scanner.next();
+        String[] cheeseChoices = cheeseInput.split(",");
+        List<String> cheese = new ArrayList<>();
+
+        for (String choice : cheeseChoices) {
+            int cheeseChoiceIndex = Integer.parseInt(choice.trim());
+            if (cheeseChoiceIndex >= 1 && cheeseChoiceIndex <= CheeseChoice.values().length) {
+                CheeseChoice selectedCheese = CheeseChoice.values()[cheeseChoiceIndex - 1];
+                cheese.add(selectedCheese.getDisplayName());
+            } else {
+                System.out.println("Invalid choice. Cancelling sandwich addition.");
+                return;
+            }
+        }
+        ;
 
 
         // Calculate cost of Cheese based on sandwich size
-        int cheeseChoice = scanner.nextInt();
         double cheesePrice = 0.0;
         if (sandwichSize == 4) {
             cheesePrice = 0.75;
@@ -195,11 +209,48 @@ public class UserInterface {
             cheesePrice += extraCheeseCost;
         }
 
+        // Prompt for sauce selection
+        System.out.println("Select the sauces (comma-separated):");
+        for (SauceChoice sauceChoice : SauceChoice.values()) {
+            System.out.println(sauceChoice.ordinal() + 1 + ") " + sauceChoice.getSauce());
+        }
+        String saucesInput = scanner.next();
+        String[] sauceChoices = saucesInput.split(",");
+        List<SauceChoice> selectedSauces = new ArrayList<>();
+        double saucePrice = 0.0;
 
+        for (String sauceChoice : sauceChoices) {
+            int choice = Integer.parseInt(sauceChoice.trim());
+            if (choice >= 1 && choice <= SauceChoice.values().length) {
+                SauceChoice selectedSauce = SauceChoice.values()[choice - 1];
+                selectedSauces.add(selectedSauce);
+                saucePrice += selectedSauce.getPrice();
+            } else {
+                System.out.println("Invalid choice. Cancelling sandwich addition.");
+                return;
+            }
+        }
+        // Prompt for RegularToppingChoice selection
+        System.out.println("Select the Regular Toppings (comma-separated):");
+        for (RegularToppingChoice regularToppingChoice : RegularToppingChoice.values()) {
+            System.out.println((regularToppingChoice.ordinal() + 1) + ") " + regularToppingChoice.getRegulartoppings());
+        }
+        String regularToppingsInput = scanner.next();
+        String[] regularToppingsChoices = regularToppingsInput.split(",");
+        List<String> selectedRegularToppings = new ArrayList<>();
+        double regularToppingsPrice = 0.0;
 
-
-
-
+        for (String choice : regularToppingsChoices) {
+            int regularToppingChoiceIndex = Integer.parseInt(choice.trim());
+            if (regularToppingChoiceIndex >= 1 && regularToppingChoiceIndex <= RegularToppingChoice.values().length) {
+                RegularToppingChoice selectedRegularTopping = RegularToppingChoice.values()[regularToppingChoiceIndex - 1];
+                selectedRegularToppings.add(selectedRegularTopping.getRegulartoppings());
+                regularToppingsPrice += selectedRegularTopping.getPrice();
+            } else {
+                System.out.println("Invalid choice. Cancelling sandwich addition.");
+                return;
+            }
+        }
 
 
 
@@ -208,28 +259,30 @@ public class UserInterface {
         System.out.println("Sandwich size price: $" + sandwichSizePrice);
         System.out.println("Selected bread: " + selectedBread.getDisplayName());
         System.out.println("Bread price: $" + breadPrice);
-        System.out.println("Selected meats: " + meats);
-        System.out.println("Meat price: $" + meatPrice);
-        if (cheeseChoice == 1) {
-            System.out.println("American Cheese");
-        } else if (cheeseChoice == 2) {
-            System.out.println("Provolone Cheese");
-        } else if (cheeseChoice == 3) {
-            System.out.println("Cheddar Cheese");
-        } else if (cheeseChoice ==3) {
-            System.out.println("Swiss Cheese");
+        System.out.println("Selected meats: " + Arrays.toString(meats.toArray()).replace("[", "").replace("]", ""));
 
-        }
-        // System.out.println(cheeseChoice);
+
+
+        System.out.println("Meat price: $" + meatPrice);
+        System.out.println("Selected Cheese: " + Arrays.toString(cheese.toArray()).replace("[", "").replace("]", ""));
+
         System.out.println("Cheese price :" + cheesePrice);
+        System.out.println("Selected Sauce: " + Arrays.toString(selectedSauces.toArray()).replace("[", "").replace("]", ""));
+        System.out.println("Selected regular toppings: " + Arrays.toString(selectedRegularToppings.toArray()).replace("[", "").replace("]", ""));
+
+        System.out.println("Regular toppings price: $" + regularToppingsPrice);
+
 
         double sandwichTotalPrice = sandwichSizePrice + breadPrice + meatPrice;
         orderEntries.add("Sandwich - Size: " + sandwichSize + "\" - $" + sandwichTotalPrice);
         totalPrice += sandwichTotalPrice;
 
-        System.out.println("Sandwich added to the order.");
+
         System.out.println("Total price of sandwich is " +totalPrice);
+        System.out.println("Sandwich added to the order.");
     }
+
+
 
     private static double getMeatPriceForSize(double meatPrice, double sandwichSize) {
         if (sandwichSize == 4) {
@@ -243,6 +296,7 @@ public class UserInterface {
             return meatPrice * 1.00;  // Default meat price
         }
     }
+
 
     private static void addDrink() {
         System.out.println("Adding a drink to the order...");
