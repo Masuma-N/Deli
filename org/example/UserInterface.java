@@ -127,11 +127,33 @@ public class UserInterface {
                 MeatChoice selectedMeat = MeatChoice.values()[choice - 1];
                 meats.add(selectedMeat.getDisplayName());
                 meatPrice += getMeatPriceForSize(selectedMeat.getPrice(), sandwichSize);
+
             } else {
                 System.out.println("Invalid choice. Cancelling sandwich addition.");
                 return;
             }
         }
+        // Calculate cost of extra meat based on sandwich size
+        double extraMeatCost = 0.0;
+        if (sandwichSize == 4) {
+            extraMeatCost = 0.50;
+        } else if (sandwichSize == 8) {
+            extraMeatCost = 1.00;
+        } else if (sandwichSize == 12) {
+            extraMeatCost = 1.50;
+        }
+
+// Prompt for additional meat option
+        System.out.println("Add extra meat? (y/n)");
+        String extraMeatChoice = scanner.next();
+        boolean extraMeat = extraMeatChoice.equalsIgnoreCase("y");
+        if (extraMeat) {
+            meatPrice += extraMeatCost;
+        }
+
+
+
+
 
         System.out.println("Selected sandwich size: " + sandwichSize + "\"");
         System.out.println("Sandwich size price: $" + sandwichSizePrice);
