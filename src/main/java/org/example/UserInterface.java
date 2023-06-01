@@ -116,7 +116,7 @@ public class UserInterface {
         BreadChoice selectedBread = BreadChoice.values()[breadChoiceIndex - 1];
         double breadPrice = selectedBread.getPrice();
 
-         //TODO: MARICARMEN : Adjusted for formatting from here.
+        //TODO: MARICARMEN : Adjusted for formatting from here.
         // Prompt for meat selection
         System.out.println("Select the meats:");
         for (MeatChoice meatChoice : MeatChoice.values()) {
@@ -148,14 +148,53 @@ public class UserInterface {
             extraMeatCost = 1.50;
         }
 
-
-// Prompt for additional meat option
+        // Prompt for additional meat option
         System.out.println("Add extra meat? (y/n)");
         String extraMeatChoice = scanner.next();
         boolean extraMeat = extraMeatChoice.equalsIgnoreCase("y");
         if (extraMeat) {
             meatPrice += extraMeatCost;
         }
+        //prompt for cheese
+        System.out.println("Select the cheese:");
+        for (CheeseChoice cheeseChoice : CheeseChoice.values()) {
+            System.out.println(cheeseChoice.ordinal() + 1 + ") " + cheeseChoice.getDisplayName());
+        }
+        String cheeseInput = scanner.next();
+        String[] cheeseChoices = meatsInput.split(",");
+        List<String> cheeses = new ArrayList<>();
+        double cheesePrice = 0.0;
+
+        for (String cheeseChoice : cheeseChoices) {
+            int choice = Integer.parseInt(cheeseChoice.trim());
+            if (choice >= 1 && choice <= CheeseChoice.values().length) {
+                CheeseChoice selectedCheese = CheeseChoice.values()[choice - 1];
+                cheeses.add(selectedCheese.getDisplayName());
+                cheesePrice += getCheesePriceForSize(selectedCheese.getPrice(), sandwichSize);
+
+            } else {
+                System.out.println("Invalid choice. Cancelling sandwich addition.");
+                return;
+            }
+        }
+        // Calculate cost of extra cheese based on sandwich size
+        double extraCheeseCost = 0.0;
+        if (sandwichSize == 4) {
+            extraCheeseCost = 0.30;
+        } else if (sandwichSize == 8) {
+            extraCheeseCost = 0.60;
+        } else if (sandwichSize == 12) {
+            extraCheeseCost = 0.90;
+        }
+
+        // Prompt for additional cheese option
+        System.out.println("Add extra cheese? (y/n)");
+        String extraCheeseChoice = scanner.next();
+        boolean extraCheese = extraMeatChoice.equalsIgnoreCase("y");
+        if (extraMeat) {
+            cheesePrice += extraCheeseCost;
+        }
+
         //TODO: MARICARMEN: Adding Sauces selection
         // Prompt for sauce selection
         System.out.println("Select the sauces (comma-separated):");
@@ -189,22 +228,23 @@ public class UserInterface {
                 .map(SauceChoice::getSauce)
                 .collect(Collectors.joining(", "));
 
-            System.out.println("Selected sandwich size: " + sandwichSize + "\" Inches");
-            System.out.println("Sandwich size price: $" + sandwichSizePrice);
-            System.out.println("Selected bread: " + selectedBread.getDisplayName());
-            System.out.println("Bread price: $" + breadPrice);
-            System.out.println("Selected meats: " + selectedMeatsString);
-            System.out.println("Meat price: $" + meatPrice);
-            System.out.println("Selected sauces: " + selectedSaucesString);
-            System.out.println("Sauce included: $" + saucePrice);
+        System.out.println("Selected sandwich size: " + sandwichSize + "\" Inches");
+        System.out.println("Sandwich size price: $" + sandwichSizePrice);
+        System.out.println("Selected bread: " + selectedBread.getDisplayName());
+        System.out.println("Bread price: $" + breadPrice);
+        System.out.println("Selected meats: " + selectedMeatsString);
+        System.out.println("Meat price: $" + meatPrice);
+        System.out.println("Selected cheeses: " + cheeses);
+        System.out.println("Selected sauces: " + selectedSaucesString);
+        System.out.println("Sauce included: $" + saucePrice);
 
-            double sandwichTotalPrice = sandwichSizePrice + breadPrice + meatPrice + saucePrice;
-            orderEntries.add("Sandwich - Size: " + sandwichSize + "\" - $" + sandwichTotalPrice);
-            totalPrice += sandwichTotalPrice;
+        double sandwichTotalPrice = sandwichSizePrice + breadPrice + meatPrice + cheesePrice + saucePrice;
+        orderEntries.add("Sandwich - Size: " + sandwichSize + "\" - $" + sandwichTotalPrice);
+        totalPrice += sandwichTotalPrice;
 
-            System.out.println("Sandwich added to the order.");
-            System.out.println("Total price of sandwich is $" + totalPrice);
-            //TODO: To here.
+        System.out.println("Sandwich added to the order.");
+        System.out.println("Total price of sandwich is $" + totalPrice);
+        //TODO: To here.
 
     }
 
@@ -220,7 +260,18 @@ public class UserInterface {
             return meatPrice * 1.00;  // Default meat price
         }
     }
-
+    private static double getCheesePriceForSize(double cheesePrice, double sandwichSize) {
+        if (sandwichSize == 4) {
+            return cheesePrice;  // Meat price for 4-inch sandwich
+        } else if (sandwichSize == 8) {
+            return cheesePrice + 0.75;  // Meat price for 8-inch sandwich
+        } else if (sandwichSize == 12) {
+            return cheesePrice + 1.50;  // Meat price for 12-inch sandwich
+        } else {
+            System.out.println("Invalid sandwich size.");
+            return cheesePrice * 1.00;  // Default meat price
+        }
+    }
     private static void addDrink() {
         System.out.println("Adding a drink to the order...");
 
@@ -279,6 +330,12 @@ public class UserInterface {
         } catch (IOException e) {
             System.out.println("An error occurred while saving the order to the CSV file.");
         }
+        // Clear order entries and total price
+        orderEntries.clear();
+        totalPrice = 0.0;
+
+        // Go back to the main screen
+        displayHome();
     }
 
 
