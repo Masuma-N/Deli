@@ -176,6 +176,26 @@ public class UserInterface {
             cheesePrice = 2.25;
         }
 
+        // Calculate the cost of extra cheese based on bread size
+        double extraCheeseCost = 0.0;
+        if (sandwichSize == 4) {
+            extraCheeseCost = 0.30;
+        } else if (sandwichSize == 8) {
+            extraCheeseCost = 0.60;
+        } else if (sandwichSize == 12) {
+            extraCheeseCost = 0.90;
+        }
+
+
+        // Prompt for additional cheese option
+        System.out.println("Add extra cheese? (y/n)");
+        String extraCheeseChoice = scanner.next();
+        boolean extraCheese = extraCheeseChoice.equalsIgnoreCase("y");
+        if (extraCheese) {
+            cheesePrice += extraCheeseCost;
+        }
+
+
 
 
 
@@ -200,7 +220,7 @@ public class UserInterface {
             System.out.println("Swiss Cheese");
 
         }
-       // System.out.println(cheeseChoice);
+        // System.out.println(cheeseChoice);
         System.out.println("Cheese price :" + cheesePrice);
 
         double sandwichTotalPrice = sandwichSizePrice + breadPrice + meatPrice;
