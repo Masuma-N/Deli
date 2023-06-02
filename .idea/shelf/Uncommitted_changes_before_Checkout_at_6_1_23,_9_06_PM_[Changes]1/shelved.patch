@@ -1,0 +1,564 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"414e2768-6b8d-4914-8d59-78e64a894e61\" name=\"Changes\" comment=\"cheeses\">\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/org/example/SauceChoice.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/UserInterface.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/UserInterface.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"masuma_\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2QWPvEiQikVwjHG2gBACoQZeuK0\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n    <option name=\"showMembers\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"414e2768-6b8d-4914-8d59-78e64a894e61\" name=\"Changes\" comment=\"\" />\n      <created>1685466593810</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1685466593810</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"initial\">\n      <created>1685548515936</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1685548515936</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"order\">\n      <created>1685560639719</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1685560639719</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"receipt\">\n      <created>1685628583553</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1685628583553</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"receipt 2.0\">\n      <created>1685628712019</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1685628712019</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"cheeses\">\n      <created>1685632310030</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1685632310030</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"cheeses\">\n      <created>1685639018905</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1685639018905</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"cheeses\">\n      <created>1685639784639</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1685639784639</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"8\" />\n    <servers />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"initial\" />\n    <MESSAGE value=\"order\" />\n    <MESSAGE value=\"receipt\" />\n    <MESSAGE value=\"receipt 2.0\" />\n    <MESSAGE value=\"cheeses\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"cheeses\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/main/java/org/example/UserInterface.java</url>\n          <line>289</line>\n          <option name=\"timeStamp\" value=\"1\" />\n        </line-breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,8 +4,12 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="414e2768-6b8d-4914-8d59-78e64a894e61" name="Changes" comment="cheeses">
+-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/SauceChoice.java" afterDir="false" />
++    <list default="true" id="414e2768-6b8d-4914-8d59-78e64a894e61" name="Changes" comment="cheeses and sauces added">
++      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/DrinkAndChipsGUI.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/SandwichGUI.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Sandwiches.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Sandwich.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Sandwich.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UserInterface.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -23,7 +27,7 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="masuma_" />
++        <entry key="$PROJECT_DIR$" value="masuma_2.0" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -99,7 +103,21 @@
+       <option name="project" value="LOCAL" />
+       <updated>1685639784639</updated>
+     </task>
+-    <option name="localTasksCounter" value="8" />
++    <task id="LOCAL-00008" summary="cheeses and sauces added">
++      <created>1685640657569</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1685640657569</updated>
++    </task>
++    <task id="LOCAL-00009" summary="cheeses and sauces added">
++      <created>1685640671292</created>
++      <option name="number" value="00009" />
++      <option name="presentableId" value="LOCAL-00009" />
++      <option name="project" value="LOCAL" />
++      <updated>1685640671292</updated>
++    </task>
++    <option name="localTasksCounter" value="10" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
+@@ -108,17 +126,7 @@
+     <MESSAGE value="receipt" />
+     <MESSAGE value="receipt 2.0" />
+     <MESSAGE value="cheeses" />
+-    <option name="LAST_COMMIT_MESSAGE" value="cheeses" />
+-  </component>
+-  <component name="XDebuggerManager">
+-    <breakpoint-manager>
+-      <breakpoints>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/org/example/UserInterface.java</url>
+-          <line>289</line>
+-          <option name="timeStamp" value="1" />
+-        </line-breakpoint>
+-      </breakpoints>
+-    </breakpoint-manager>
++    <MESSAGE value="cheeses and sauces added" />
++    <option name="LAST_COMMIT_MESSAGE" value="cheeses and sauces added" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/uiDesigner.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/uiDesigner.xml b/.idea/uiDesigner.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/uiDesigner.xml	
+@@ -0,0 +1,124 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Palette2">
++    <group name="Swing">
++      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
++      </item>
++      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.svg" removable="false" auto-create-binding="false" can-attach-label="true">
++        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
++        <initial-values>
++          <property name="text" value="Button" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="RadioButton" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="CheckBox" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="Label" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
++          <preferred-size width="-1" height="20" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
++      </item>
++    </group>
++  </component>
++</project>
+\ No newline at end of file
+Index: src/main/java/org/example/SandwichGUI.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/SandwichGUI.java b/src/main/java/org/example/SandwichGUI.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/org/example/SandwichGUI.java	
+@@ -0,0 +1,193 @@
++package org.example;
++import javax.swing.*;
++import java.awt.*;
++import java.awt.event.ActionEvent;
++import java.awt.event.ActionListener;
++
++
++
++
++
++    public class SandwichGUI extends JFrame {
++        private Sandwiches sandwich;
++
++        private JCheckBox[] meatCheckboxes;
++        private JCheckBox[] cheeseCheckboxes;
++        private JCheckBox[] sauceCheckboxes;
++
++
++
++
++        public SandwichGUI() {
++            // Create a new sandwich object
++            sandwich = new Sandwiches();
++
++           /* // Initialize the frame
++            setTitle("Sandwich GUI");
++            setSize(400, 300);
++            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
++            setLayout(new GridLayout(10, 10));*/
++
++            // Initialize the frame
++            setTitle("Sandwich GUI");
++            setSize(400, 300);
++            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
++            setLayout(new GridLayout(4, 1));
++
++            // Create a glowing title label
++            JLabel titleLabel = new JLabel("Delicious Sandwiches");
++            Font titleFont = new Font("Arial", Font.BOLD, 24);
++            titleLabel.setFont(titleFont);
++            titleLabel.setForeground(Color.WHITE);
++
++            // Create a timer to toggle the glow effect
++            Timer timer = new Timer(1000, new ActionListener() {
++                private boolean glowOn = true;
++
++                @Override
++                public void actionPerformed(ActionEvent e) {
++                    if (glowOn) {
++                        titleLabel.setForeground(Color.PINK);
++                        glowOn = false;
++                    } else {
++                        titleLabel.setForeground(Color.WHITE);
++                        glowOn = true;
++                    }
++                }
++            });
++            timer.start();
++
++            // Add the glowing title label to the frame
++            JPanel titlePanel = new JPanel();
++            titlePanel.setBackground(Color.BLACK);
++            titlePanel.add(titleLabel);
++            add(titlePanel);
++
++            // Create and add checkboxes for sandwich size
++            JPanel sizePanel = new JPanel();
++            JLabel sizeLabel = new JLabel("Select sandwich size: ");
++            sizePanel.add(sizeLabel);
++
++            String[] sizeOptions = {"4-inch", "8-inch", "12-inch"};
++            JComboBox<String> sizeComboBox = new JComboBox<>(sizeOptions);
++            sizeComboBox.addActionListener(new ActionListener() {
++                @Override
++                public void actionPerformed(ActionEvent e) {
++                    String selectedSize = (String) sizeComboBox.getSelectedItem();
++                    sandwich.setSize(selectedSize);
++                }
++            });
++            sizePanel.add(sizeComboBox);
++            add(sizePanel);
++
++            // Create and add checkboxes for meats
++            JPanel meatPanel = new JPanel();
++            JLabel meatLabel = new JLabel("Select meats: ");
++            meatPanel.add(meatLabel);
++
++            String[] meatOptions = {"Salami", "Roast Beef", "Chicken", "Bacon","Extra Meat"};
++            meatCheckboxes = new JCheckBox[meatOptions.length];
++            for (int i = 0; i < meatOptions.length; i++) {
++                meatCheckboxes[i] = new JCheckBox(meatOptions[i]);
++                int finalI = i;
++                meatCheckboxes[i].addActionListener(new ActionListener() {
++                    @Override
++                    public void actionPerformed(ActionEvent e) {
++                        String selectedMeat = meatCheckboxes[finalI].getText();
++                        if (meatCheckboxes[finalI].isSelected()) {
++                            sandwich.addMeat(selectedMeat);
++                        } else {
++                            sandwich.removeMeat(selectedMeat);
++                        }
++                    }
++                });
++                meatPanel.add(meatCheckboxes[i]);
++            }
++            add(meatPanel);
++
++            // Create and add checkboxes for cheeses
++            JPanel cheesePanel = new JPanel();
++            JLabel cheeseLabel = new JLabel("Select cheeses: ");
++            cheesePanel.add(cheeseLabel);
++
++            String[] cheeseOptions = {"American", "Provolone", "Cheddar", "Swiss","Extra cheese"};
++            cheeseCheckboxes = new JCheckBox[cheeseOptions.length];
++            for (int i = 0; i < cheeseOptions.length; i++) {
++                cheeseCheckboxes[i] = new JCheckBox(cheeseOptions[i]);
++                int finalI = i;
++                cheeseCheckboxes[i].addActionListener(new ActionListener() {
++                    @Override
++                    public void actionPerformed(ActionEvent e) {
++                        String selectedCheese = cheeseCheckboxes[finalI].getText();
++                        if (cheeseCheckboxes[finalI].isSelected()) {
++                            sandwich.addCheese(selectedCheese);
++                        } else {
++                            sandwich.removeCheese(selectedCheese);
++                        }
++                    }
++                });
++                cheesePanel.add(cheeseCheckboxes[i]);
++            }
++            add(cheesePanel);
++
++            // Create and add checkboxes for sauces
++            JPanel saucePanel = new JPanel();
++            JLabel sauceLabel = new JLabel("Select sauces: ");
++            saucePanel.add(sauceLabel);
++
++            String[] sauceOptions = {"Mayo", "Mustard", "Ketchup", "Ranch","Thousand Islands","Vinaigrette"};
++            sauceCheckboxes = new JCheckBox[sauceOptions.length];
++            for(int i = 0; i < sauceOptions.length; i++) {
++                sauceCheckboxes[i] = new JCheckBox(sauceOptions[i]);
++                int finalI = i;
++                sauceCheckboxes[i].addActionListener(new ActionListener() {
++                    @Override
++                    public void actionPerformed(ActionEvent e) {
++                        String selectedSauce = sauceCheckboxes[finalI].getText();
++                        if (sauceCheckboxes[finalI].isSelected()) {
++                            sandwich.addSauce(selectedSauce);
++                        } else {
++                            sandwich.removeSauce(selectedSauce);
++                        }
++                    }
++                });
++                saucePanel.add(sauceCheckboxes[i]);
++            }
++            add(saucePanel);
++
++            // Display the frame
++            setVisible(true);
++            // Create and add the next button
++            JPanel buttonPanel = new JPanel();
++            JButton nextButton = new JButton("Next");
++            nextButton.addActionListener(new ActionListener() {
++                @Override
++                public void actionPerformed(ActionEvent e) {
++                    // Open the next page for drink and chips options
++                    dispose(); // Close the current frame
++
++                    // Create and show the new frame for drink and chips options
++                    DrinkAndChipsGUI drinkAndChipsGUI = new DrinkAndChipsGUI(sandwich);
++                    drinkAndChipsGUI.setVisible(true);
++                }
++            });
++            buttonPanel.add(nextButton);
++            add(buttonPanel);
++
++            // Display the frame
++            setVisible(true);
++        }
++
++
++
++        public static void main(String[] args) {
++            SwingUtilities.invokeLater(new Runnable() {
++                @Override
++                public void run() {
++                    new SandwichGUI();
++                }
++            });
++        }
++    }
++
++
+Index: src/main/java/org/example/Sandwiches.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/Sandwiches.java b/src/main/java/org/example/Sandwiches.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/org/example/Sandwiches.java	
+@@ -0,0 +1,38 @@
++package org.example;
++
++public class Sandwiches {
++
++
++    public void setSize(String selectedSize) {
++    }
++
++    public void addMeat(String selectedMeat) {
++    }
++
++    public void removeMeat(String selectedMeat) {
++    }
++
++    public void addCheese(String selectedCheese) {
++    }
++
++    public void removeCheese(String selectedCheese) {
++    }
++
++    public void addSauce(String selectedSauce) {
++    }
++
++    public void removeSauce(String selectedSauce) {
++    }
++
++    public void addDrink(String selectedDrink) {
++    }
++
++    public void removeDrink(String selectedDrink) {
++    }
++
++    public void addChips(String selectedChips) {
++    }
++
++    public void removeChips(String selectedChips) {
++    }
++}
+Index: src/main/java/org/example/DrinkAndChipsGUI.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/DrinkAndChipsGUI.java b/src/main/java/org/example/DrinkAndChipsGUI.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/org/example/DrinkAndChipsGUI.java	
+@@ -0,0 +1,90 @@
++package org.example;
++
++import javax.swing.*;
++import java.awt.*;
++import java.awt.event.ActionEvent;
++import java.awt.event.ActionListener;
++
++public class DrinkAndChipsGUI extends JFrame {
++    private Sandwiches sandwich;
++
++    public DrinkAndChipsGUI(Sandwiches sandwich) {
++        this.sandwich = sandwich;
++
++        // Initialize the frame
++        setTitle("Drink and Chips GUI");
++        setSize(400, 300);
++        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
++        setLayout(new GridLayout(4, 1));
++
++        // Create and add checkboxes for drinks
++        JPanel drinkPanel = new JPanel();
++        JLabel drinkLabel = new JLabel("Select drinks: ");
++        drinkPanel.add(drinkLabel);
++
++        String[] drinkOptions = {"Coke", "Pepsi", "Sprite", "Iced Tea", "Water"};
++        JCheckBox[] drinkCheckboxes = new JCheckBox[drinkOptions.length];
++        for (int i = 0; i < drinkOptions.length; i++) {
++            drinkCheckboxes[i] = new JCheckBox(drinkOptions[i]);
++            int finalI = i;
++            drinkCheckboxes[i].addActionListener(new ActionListener() {
++                @Override
++                public void actionPerformed(ActionEvent e) {
++                    String selectedDrink = drinkCheckboxes[finalI].getText();
++                    if (drinkCheckboxes[finalI].isSelected()) {
++                        sandwich.addDrink(selectedDrink);
++                    } else {
++                        sandwich.removeDrink(selectedDrink);
++                    }
++                }
++            });
++            drinkPanel.add(drinkCheckboxes[i]);
++        }
++        add(drinkPanel);
++
++        // Create and add checkboxes for chips
++        JPanel chipsPanel = new JPanel();
++        JLabel chipsLabel = new JLabel("Select chips: ");
++        chipsPanel.add(chipsLabel);
++
++        String[] chipsOptions = {"Lays", "Doritos", "Pringles", "Cheetos", "Ruffles"};
++        JCheckBox[] chipsCheckboxes = new JCheckBox[chipsOptions.length];
++        for (int i = 0; i < chipsOptions.length; i++) {
++            chipsCheckboxes[i] = new JCheckBox(chipsOptions[i]);
++            int finalI = i;
++            chipsCheckboxes[i].addActionListener(new ActionListener() {
++                @Override
++                public void actionPerformed(ActionEvent e) {
++                    String selectedChips = chipsCheckboxes[finalI].getText();
++                    if (chipsCheckboxes[finalI].isSelected()) {
++                        sandwich.addChips(selectedChips);
++                    } else {
++                        sandwich.removeChips(selectedChips);
++                    }
++                }
++            });
++            chipsPanel.add(chipsCheckboxes[i]);
++        }
++        add(chipsPanel);
++
++        // Create and add the order button
++        JPanel buttonPanel = new JPanel();
++        JButton orderButton = new JButton("Place Order");
++        orderButton.addActionListener(new ActionListener() {
++            @Override
++            public void actionPerformed(ActionEvent e) {
++                // Perform actions for placing the order
++                // For example, display a confirmation message
++                JOptionPane.showMessageDialog(DrinkAndChipsGUI.this, "Order placed successfully!");
++
++                // Close the current frame
++                dispose();
++            }
++        });
++        buttonPanel.add(orderButton);
++        add(buttonPanel);
++
++        // Display the frame
++        setVisible(true);
++    }
++}
