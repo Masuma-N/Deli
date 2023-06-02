@@ -139,7 +139,7 @@ There are six (6) screens in this application:
 * 'scanner': A 'Scanner' object for user input.
 
 #### Fields
-* 'orderEntries' : A 'List' tp store order entries.
+* 'orderEntries' : A 'List' to store order entries.
 * 'totalPrice' : A 'double' to store the total price of the order.
 
 #### Methods
