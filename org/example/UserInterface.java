@@ -251,6 +251,29 @@ public class UserInterface {
                 return;
             }
         }
+      //promt user for Side selection
+        // Prompt for Side choice
+        System.out.println("Select the Side choices (comma-separated):");
+        for (SideChoice sideChoice : SideChoice.values()) {
+            System.out.println((sideChoice.ordinal() + 1) + ") " + sideChoice.getSideChoice());
+        }
+        String sideChoicesInput = scanner.next();
+        String[] sideChoicesArray = sideChoicesInput.split(",");
+        List<String> selectedSideChoices = new ArrayList<>();
+        double sideChoicePrice = 0.0;
+
+        for (String choice : sideChoicesArray) {
+            int sideChoiceIndex = Integer.parseInt(choice.trim());
+            if (sideChoiceIndex >= 1 && sideChoiceIndex <= SideChoice.values().length) {
+                SideChoice selectedSideChoice = SideChoice.values()[sideChoiceIndex - 1];
+                selectedSideChoices.add(selectedSideChoice.getSideChoice());
+                sideChoicePrice += selectedSideChoice.getPrice();
+            } else {
+                System.out.println("Invalid choice. Cancelling sandwich addition.");
+                return;
+            }
+        }
+
 
 
 
@@ -271,9 +294,12 @@ public class UserInterface {
         System.out.println("Selected regular toppings: " + Arrays.toString(selectedRegularToppings.toArray()).replace("[", "").replace("]", ""));
 
         System.out.println("Regular toppings price: $" + regularToppingsPrice);
+        System.out.println("Selected side choices: " + Arrays.toString(selectedSideChoices.toArray()).replace("[", "").replace("]", ""));
+
+        System.out.println("Total side choices price: $" + sideChoicePrice);
 
 
-        double sandwichTotalPrice = sandwichSizePrice + breadPrice + meatPrice;
+        double sandwichTotalPrice = sandwichSizePrice + breadPrice + meatPrice +cheesePrice;
         orderEntries.add("Sandwich - Size: " + sandwichSize + "\" - $" + sandwichTotalPrice);
         totalPrice += sandwichTotalPrice;
 

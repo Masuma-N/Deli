@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="414e2768-6b8d-4914-8d59-78e64a894e61" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/org/example/RegularToppingChoice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/org/example/SideChoice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/example/RegularTopping.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/org/example/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/example/UserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Deli/org/example/RegularTopping.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Deli/org/example/UserInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Deli/org/example/UserInterface.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -275,7 +273,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685638951066</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="initial commit">
+      <created>1685648890229</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1685648890229</updated>
+    </task>
+    <task id="LOCAL-00030" summary="initial commit">
+      <created>1685648950512</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1685648950512</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
