@@ -112,11 +112,13 @@ public class UserInterface {
     }
 
     private void cancelOrder() {
+        System.out.println("Your order was cancelled!");
     }
 
     private void checkout() {
 
         // Generate unique file name using timestamp
+
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
         String timestamp = now.format(formatter);
