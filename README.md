@@ -153,11 +153,15 @@ There are six (6) screens in this application:
     !!! There may be error handling issues with invalid inputs that will 
     exit or crash the program.
 ### Interesting Piece of Code:
-#### ASCII DELI-cious Sandwiches Logo
+#### - ASCII DELI-cious Sandwiches Logo
 ![ASCII Logo Image](/Documents/README_Images/DELIciousSandwichesASCIILogo.png)
-#### FileWriter
+#### - FileWriter
 ![FileWrite Image](/Documents/README_Images/FileWriterSnip.png)
+#### - Order Summary 
+![Order Summary Image](/Documents/README_Images/OrderSummarySnip.png)
+##### - Result: Printed Order Summary
 
+![Order Summary Printed Image](/Documents/README_Images/OrderSummaryPrintedSnip.png)
 ## Acknowledgements
 We would like to acknowledge the following individuals for their contributions and support to this project:
 * **Paul Kimball**

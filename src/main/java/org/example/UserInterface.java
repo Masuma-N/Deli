@@ -401,6 +401,12 @@ public class UserInterface {
     }
 
     private static void checkOut() {
+
+        System.out.println("\u001B[38;2;0;0;255mOrder Summary: \u001B[0m");
+        for (String entry : orderEntries) {
+            System.out.println(entry);
+        }
+        System.out.println("\u001B[38;2;173;216;230mTotal Price: $" + totalPrice + "\u001B[0m");
         try {
             // Create the directory if it doesn't exist
             String directoryPath = "Receipts";
@@ -427,7 +433,7 @@ public class UserInterface {
             writer.write("Total Price: " + totalPrice + "\n");
             writer.close();
 
-            System.out.println("Receipt saved successfully!");
+            System.out.println("\u001B[38;2;0;0;255mReceipt saved successfully!\u001B[0m");
         } catch (IOException e) {
             System.out.println("An error occurred while saving the receipt.");
             e.printStackTrace();
