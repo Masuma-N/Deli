@@ -212,7 +212,7 @@ public class SandwichGUI extends JFrame {
 
         // Display the frame
         setVisible(true);
-        // Create and add the next button
+        //** Create and add the next button**
         JPanel buttonPanel = new JPanel();
         JButton nextButton = new JButton("Next");
         nextButton.addActionListener(new ActionListener() {
@@ -221,7 +221,7 @@ public class SandwichGUI extends JFrame {
                 // Open the next page for drink and chips options
                 dispose(); // Close the current frame
 
-                // Create and show the new frame for drink and chips options
+                //** Create and show the new frame for drink and chips options**
                 DrinkAndChipsGUI drinkAndChipsGUI = new DrinkAndChipsGUI(sandwich);
                 drinkAndChipsGUI.setVisible(true);
             }

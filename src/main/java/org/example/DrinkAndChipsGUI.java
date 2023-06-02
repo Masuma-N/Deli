@@ -11,13 +11,13 @@ public class DrinkAndChipsGUI extends JFrame {
     public DrinkAndChipsGUI(Sandwiches sandwich) {
         this.sandwich = sandwich;
 
-        // Initialize the frame
+        // **Initialize the frame**
         setTitle("Drink and Chips GUI");
         setSize(700, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridLayout(4, 1));
 
-        // Create and add checkboxes for sandwich size
+        // **Create and add checkboxes for drink size**
         JPanel sizePanel = new JPanel();
         JLabel sizeLabel = new JLabel("Select drink size: ");
         sizePanel.add(sizeLabel);
@@ -34,7 +34,7 @@ public class DrinkAndChipsGUI extends JFrame {
         sizePanel.add(sizeComboBox);
         add(sizePanel);
 
-        // Create and add checkboxes for drinks
+        //** Create and add checkboxes for drinks**
         JPanel drinkPanel = new JPanel();
         JLabel drinkLabel = new JLabel("Select drinks: ");
         drinkPanel.add(drinkLabel);
@@ -59,7 +59,7 @@ public class DrinkAndChipsGUI extends JFrame {
         }
         add(drinkPanel);
 
-        // Create and add checkboxes for chips
+        // **Create and add checkboxes for chips**
         JPanel chipsPanel = new JPanel();
         JLabel chipsLabel = new JLabel("Select chips: ");
         chipsPanel.add(chipsLabel);
@@ -84,14 +84,14 @@ public class DrinkAndChipsGUI extends JFrame {
         }
         add(chipsPanel);
 
-        // Create and add the order button
+        //** Create and add the order button**
         JPanel buttonPanel = new JPanel();
         JButton orderButton = new JButton("Place Order");
         orderButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Perform actions for placing the order
-                // For example, display a confirmation message
+                // displays a confirmation message
                 JOptionPane.showMessageDialog(DrinkAndChipsGUI.this, "Order placed successfully!");
 
                 // Close the current frame
