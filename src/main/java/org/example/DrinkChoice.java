@@ -1,6 +1,7 @@
 package org.example;
 
 public enum DrinkChoice {
+
     SMALL("Small", 2.00),
     MEDIUM("Medium", 2.50),
     LARGE("Large", 3.00);
@@ -20,4 +21,3 @@ public enum DrinkChoice {
     public double getPrice() {
         return price;
     }
-}
