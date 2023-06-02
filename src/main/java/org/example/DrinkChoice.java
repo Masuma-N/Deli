@@ -15,10 +15,12 @@ public enum DrinkChoice {
     }
 
     public String getSize() {
+
         return size;
     }
 
     public double getPrice() {
+
         return price;
     }
 }

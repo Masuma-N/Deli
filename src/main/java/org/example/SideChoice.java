@@ -1,8 +1,8 @@
 package org.example;
 
 public enum SideChoice {
-    AU_JUS("au jus", 0.0),
-    SAUCE("sauce", 0.0);
+    AU_JUS("Au Jus", 0.0),
+    SAUCE("Sauce", 0.0);
 
     private String sideChoice;
     private double price;
