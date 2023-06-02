@@ -25,7 +25,6 @@ signature sandwiches, drinks, and chips. The class provides a menu-based interfa
 ### Setup Instructions
 1. Clone the repository or download the file.
 2. Open a command-line interface and run the main java file.
-3. 
 ## Key Features
 * Creates a new order
 * Adds custom sandwiches with options for size, bread, meat, cheese, sauce, and toppings
