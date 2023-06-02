@@ -1,0 +1,42 @@
+Index: src/main/java/org/example/UserInterface.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example;\nimport java.sql.SQLOutput;\nimport java.util.Scanner;\n\n\npublic class UserInterface {\n    public static Scanner scanner= new Scanner(System.in);\n    public void display(){\n        displayHome();\n    }\n    private void displayHome() {\n\n\n        System.out.println(\"Welcome to our Deli/shop! How may I help you? \");\n\n        System.out.println(\"\\n \\n Our Menu: \");\n        //inputs will display the menu\n        System.out.println(\"New Order [1]\");\n        System.out.println(\"Exit [2]\");\n        String Userinput = scanner.nextLine();\n\n        switch(Userinput){\n            case \"1\" ->startOrder();\n            case \"2\" -> {\n                System.out.println(\"Goodbye, have a nice day!\");\n                System.exit(0);\n            }\n            default -> System.out.println();\n\n        }\n\n\n\n    }\n\n    private void startOrder() {\n    }\n\n\n}
+===================================================================
+diff --git a/src/main/java/org/example/UserInterface.java b/src/main/java/org/example/UserInterface.java
+--- a/src/main/java/org/example/UserInterface.java	
++++ b/src/main/java/org/example/UserInterface.java	
+@@ -1,5 +1,4 @@
+ package org.example;
+-import java.sql.SQLOutput;
+ import java.util.Scanner;
+ 
+ 
+@@ -34,6 +33,7 @@
+     }
+ 
+     private void startOrder() {
++        
+     }
+ 
+ 
+Index: src/main/java/org/example/Order.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example;\n\npublic class Order {\n\n}\n
+===================================================================
+diff --git a/src/main/java/org/example/Order.java b/src/main/java/org/example/Order.java
+--- a/src/main/java/org/example/Order.java	
++++ b/src/main/java/org/example/Order.java	
+@@ -1,5 +1,11 @@
+ package org.example;
+ 
+ public class Order {
++    String Sandwich;
++    String Chips;
++    String Drinks;
++    Boolean Checkout;
++
++
+ 
+ }

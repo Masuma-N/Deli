@@ -1,0 +1,36 @@
+Index: src/main/java/org/example/Drink.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example;\n\npublic class Drink {\n}\n
+===================================================================
+diff --git a/src/main/java/org/example/Drink.java b/src/main/java/org/example/Drink.java
+--- a/src/main/java/org/example/Drink.java	
++++ b/src/main/java/org/example/Drink.java	
+@@ -1,4 +1,26 @@
+ package org.example;
+ 
+-public class Drink {
++public enum Drink {
++
++    SMALL("Small", 2.00),
++    MEDIUM("Medium", 2.50),
++    LARGE("Large", 3.00);
++
++    private final String size;
++    private final double price;
++
++    Drink(String size, double price) {
++        this.size = size;
++        this.price = price;
++    }
++
++
++
++    public String getSize() {
++        return size;
++    }
++
++    public double getPrice() {
++        return price;
++    }
+ }
