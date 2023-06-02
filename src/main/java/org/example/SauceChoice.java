@@ -24,8 +24,6 @@ public enum SauceChoice {
         return price;
     }
 
-}
-
 
     @Override
     public String toString() {

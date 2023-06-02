@@ -21,3 +21,4 @@ public enum DrinkChoice {
     public double getPrice() {
         return price;
     }
+}
