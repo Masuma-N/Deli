@@ -79,7 +79,7 @@ public class UserInterface {
     }
 
     private static void displayOptions() {
-        System.out.println("DELI-cious - Order Screen");
+        System.out.println("Delicious - Order Screen");
         System.out.println("Choose an option:");
         System.out.println("1) Add Sandwich");
         System.out.println("2) Add Drink");
