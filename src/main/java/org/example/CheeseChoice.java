@@ -1,10 +1,17 @@
 package org.example;
 
 public enum CheeseChoice {
+
     AMERICAN("American",0.75 ),
     PROVOLONE("Provolone",0.75),
     CHEDDAR("Cheddar",0.75),
     SWISS("Swiss",0.75);
+
+    AMERICAN("AMERICAN",0.75 ),
+    PROVOLONE("Provolone",0.75),
+   CHEDDAR("Cheddar",0.75),
+   SWISS("Swiss",0.75);
+
 
 
     private final String displayName;
