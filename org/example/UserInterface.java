@@ -1,5 +1,9 @@
 package org.example;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -59,7 +63,7 @@ public class UserInterface {
                     break;
                 case 4:
                     // Checkout
-                    checkout();
+                    checkOut();
                     break;
                 case 0:
                     // Cancel Order
@@ -325,8 +329,6 @@ public class UserInterface {
 
 
     private static void addDrink() {
-        System.out.println("Adding a drink to the order...");
-
         System.out.println("Select the drink size:");
         for (DrinkChoice drinkChoice : DrinkChoice.values()) {
             System.out.println(drinkChoice.ordinal() + 1 + ") " + drinkChoice.getSize() + " - $" + drinkChoice.getPrice());
@@ -341,34 +343,82 @@ public class UserInterface {
         DrinkChoice selectedDrink = DrinkChoice.values()[sizeChoice - 1];
         double drinkPrice = selectedDrink.getPrice();
 
+        System.out.println("Select the drink flavor:");
+        for (FlavorChoice flavorChoice : FlavorChoice.values()) {
+            System.out.println(flavorChoice.ordinal() + 1 + ") " + flavorChoice.getFlavor() + " - $" + flavorChoice.getPrice());
+        }
+
+        int flavorChoice = scanner.nextInt();
+        if (flavorChoice < 1 || flavorChoice > FlavorChoice.values().length) {
+            System.out.println("Invalid choice. Cancelling drink addition.");
+            return;
+        }
+
+        FlavorChoice selectedFlavor = FlavorChoice.values()[flavorChoice - 1];
+        double flavorPrice = selectedFlavor.getPrice();
+
+
         orderEntries.add("Drink - " + selectedDrink.getSize() + " - $" + drinkPrice);
         totalPrice += drinkPrice;
 
         System.out.println("Selected drink: " + selectedDrink.getSize() + " - $" + drinkPrice);
         System.out.println("Drink added to the order.");
+
     }
-
     private static void addChips() {
-        System.out.println("Adding chips to the order...");
-        System.out.println("Do you want to add chips? (Y/N)");
+        System.out.println("Choose the chips to add to your order:");
 
-        String choice = scanner.next();
-        if (choice.equalsIgnoreCase("Y")) {
-            orderEntries.add("Chips - $1.50");
-            totalPrice += 1.50;
-            System.out.println("Chips added to the order.");
-            System.out.println("It will be an extra $1.50.");
+        String[] chipsOptions = {"Regular", "BBQ", "Salt and Vinegar", "Sour Cream and Onion"};
+        double[] chipsPrices = {1.50, 1.75, 1.75, 1.75};
+
+        for (int i = 0; i < chipsOptions.length; i++) {
+            System.out.println((i + 1) + ". " + chipsOptions[i] + " ($" + chipsPrices[i] + ")");
+        }
+
+        int choice = scanner.nextInt();
+
+        if (choice >= 1 && choice <= chipsOptions.length) {
+            orderEntries.add(chipsOptions[choice - 1] + " - $" + chipsPrices[choice - 1]);
+            totalPrice += chipsPrices[choice - 1];
+            System.out.println(chipsOptions[choice - 1] + " added to the order.");
+            System.out.println("It will be an extra $" + chipsPrices[choice - 1] + ".");
         } else {
-            System.out.println("Chips not added to the order.");
+            System.out.println("Invalid choice. Chips not added to the order.");
         }
     }
 
-    private static void checkout() {
+    private static void checkOut() {
         System.out.println("Order Summary:");
         for (String entry : orderEntries) {
             System.out.println(entry);
         }
         System.out.println("Total Price: $" + totalPrice);
+
+         //Generate unique file name using timestamp
+
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
+        String timestamp = now.format(formatter);
+        String fileName = "order_" + timestamp + ".csv";
+
+        // Save order to CSV file
+        try (FileWriter fileWriter = new FileWriter(fileName)) {
+            for (String entry : orderEntries) {
+                fileWriter.append("Receipt\n");
+                fileWriter.append(entry).append("\n");
+            }
+            fileWriter.append("Total Price: $").append(String.valueOf(totalPrice));
+            System.out.println("Order saved to the CSV file: " + fileName);
+            System.out.println("Would you like to order anything Else");
+            System.out.println();
+        } catch (IOException e) {
+            System.out.println("An error occurred while saving the order to the CSV file.");
+        }
+        // Clear order entries and total price
+        orderEntries.clear();
+        totalPrice = 0.0;
+
+
     }
 
     private static void cancelOrder() {
