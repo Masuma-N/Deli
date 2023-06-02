@@ -8,16 +8,16 @@ public enum SauceChoice {
     THOUSAND_ISLANDS("Thousand Islands", 0),
     VINAIGRETTE("Vinaigrette", 0);
 
-    private final String sauce;
+    private final String sauceName;
     private final double price;
 
-    SauceChoice(String sauce, double price) {
-        this.sauce = sauce;
+    SauceChoice(String sauceName, double price) {
+        this.sauceName = sauceName;
         this.price = price;
     }
 
-    public String getSauce() {
-        return sauce;
+    public String getSauceName() {
+        return sauceName;
     }
 
     public double getPrice() {

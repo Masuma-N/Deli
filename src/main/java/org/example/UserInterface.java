@@ -1,8 +1,11 @@
 package org.example;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,7 +16,6 @@ public class UserInterface {
     private static final double[] SANDWICH_SIZE = {4, 8, 12}; // Available sandwich sizes in inches
     private static final double[] SANDWICH_SIZE_PRICES = {5.50, 7.00, 8.50}; // Prices for each sandwich size
     private static List<String> orderEntries = new ArrayList<>(); // List to store order entries
-
     public static Scanner scanner = new Scanner(System.in);
     private static double totalPrice = 0.0;
 
@@ -22,115 +24,82 @@ public class UserInterface {
     }
 
     private void displayHome() {
-        System.out.println("\u001B[38;2;0;255;0m ___  ___ _    ___     ___ ___ ___  _   _ ___     \u001B[0m");
-        System.out.println("\u001B[38;2;0;255;0m|   \\| __| |  |_ _|__ / __|_ _/ _ \\| | | / __|    \u001B[0m");
-        System.out.println("\u001B[38;2;0;255;0m| |) | _|| |__ | |___| (__ | | (_) | |_| \\__ \\    \u001B[0m");
-        System.out.println("\u001B[38;2;0;255;0m|___/|___|____|___|__ \\___|___\\___/_\\___/|___/___ \u001B[0m");
-        System.out.println("\u001B[38;2;0;255;0m / __| /_\\ | \\| |   \\ \\    / /_ _/ __| || | __/ __|\u001B[0m");
-        System.out.println("\u001B[38;2;0;255;0m \\__ \\/ _ \\| .` | |) \\ \\/\\/ / | | (__| __ | _|\\__ \\\u001B[0m");
-        System.out.println("\u001B[38;2;0;255;0m |___/_/ \\_\\_|\\_|___/ \\_/\\_/ |___\\___|_||_|___|___/\u001B[0m");
-        System.out.println("\n Welcome to our Deli!  \n Choose an option from our menu. ");
-
-        System.out.println("\n\nOur Menu: ");
-        System.out.println("[1] New Order");
-        System.out.println("[2] Exit");
-        String userInput = scanner.nextLine();
-
-        switch (userInput) {
-            case "1":
-                startOrder();
-                break;
-            case "2":
-                System.out.println("Goodbye, have a nice day! ");
-                System.exit(0);
-            default:
-                System.out.println("Invalid input");
-                break;
+        System.out.println("\u001B[38;2;0;0;255m ___  ___ _    ___     ___ ___ ___  _   _ ___     \u001B[0m");
+        System.out.println("\u001B[38;2;0;0;255m|   \\| __| |  |_ _|__ / __|_ _/ _ \\| | | / __|    \u001B[0m");
+        System.out.println("\u001B[38;2;0;0;255m| |) | _|| |__ | |___| (__ | | (_) | |_| \\__ \\    \u001B[0m");
+        System.out.println("\u001B[38;2;0;0;255m|___/|___|____|___|__ \\___|___\\___/_\\___/|___/___ \u001B[0m");
+        System.out.println("\u001B[38;2;0;0;255m / __| /_\\ | \\| |   \\ \\    / /_ _/ __| || | __/ __|\u001B[0m");
+        System.out.println("\u001B[38;2;0;0;255m \\__ \\/ _ \\| .` | |) \\ \\/\\/ / | | (__| __ | _|\\__ \\\u001B[0m");
+        System.out.println("\u001B[38;2;0;0;139m |___/_/ \\_\\_|\\_|___/ \\_/\\_/ |___\\___|_||_|___|___/\u001B[0m");
+        System.out.println("""
+                                
+                Welcome to our Deli!
+                Please enter a bracket option (number only).
+                                
+                                MAIN MENU
+                ---------------------------------------------
+                [1] New Order
+                [2] Exit
+                """);
+        boolean isValidInput = false;
+        while (!isValidInput) {
+            String userInput = scanner.nextLine();
+            switch (userInput) {
+                case "1":
+                    startOrder();
+                    break;
+                case "2":
+                    System.out.println("Thank you! Come again!");
+                    System.exit(0);
+                default:
+                    invalidInput();
+                    break;
+            }
         }
     }
 
     private void startOrder() {
-        int choice;
+        int userInput;
         do {
-            displayOptions();
-            choice = scanner.nextInt();
-
-            switch (choice) {
-                case 1:
-                    // Add Sandwich
-                    addSandwich();
-                    break;
-                case 2:
-                    // Add Drink
-                    addDrink();
-                    break;
-                case 3:
-                    // Add Chips
-                    addChips();
-                    break;
-                case 4:
-                    // Checkout
-                    checkOut();
-                    break;
-
-                case 5:
-                    //Signature sandwich
-                    addSignatureSandwich();
-                    break;
-
-                case 0:
-                    // Cancel Order
-                    cancelOrder();
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please try again.");
-                    break;
+            horizontalLine();
+            System.out.println("""
+                    Try the best sandwiches in town!
+                    Please enter a bracket option (number only).
+                     
+                                       ORDER MENU
+                    ---------------------------------------------
+                    [1] Add Custom Sandwich
+                    [2] Add Signature Sandwich
+                    [3] Add Drink
+                    [4] Add Chips
+                    [5] Checkout
+                    [0] Exit
+                    """);
+            while (!scanner.hasNextInt()) {
+                invalidInput();
+                scanner.nextLine(); // Consume invalid input
             }
-        } while (choice != 0);
-    }
+            userInput = scanner.nextInt();
 
-    private void displayOptions() {
-        System.out.println("\nWhat would you like to add to your order?");
-        System.out.println("[1] Add Sandwich");
-        System.out.println("[2] Add Drink");
-        System.out.println("[3] Add Chips");
-        System.out.println("[4] Checkout");
-        System.out.println("[5] Add Signature Sandwich");
-        System.out.println("[0] Exit");
-    }
-    private void addSignatureSandwich() {
-        System.out.println("Select the signature sandwich:");
-        for (SignatureSandwichChoice sandwichChoice : SignatureSandwichChoice.values()) {
-            System.out.println(sandwichChoice.ordinal() + 1 + ") " + sandwichChoice.getDisplayName() + " - $" + sandwichChoice.getPrice());
-        }
-
-        int choice = scanner.nextInt();
-        if (choice < 1 || choice > SignatureSandwichChoice.values().length) {
-            System.out.println("Invalid choice. Signature sandwich not added to the order.");
-            return;
-        }
-
-        SignatureSandwichChoice selectedSandwich = SignatureSandwichChoice.values()[choice - 1];
-        double sandwichPrice = selectedSandwich.getPrice();
-
-        orderEntries.add("Signature Sandwich - " + selectedSandwich.getDisplayName() + " - $" + sandwichPrice);
-        totalPrice += sandwichPrice;
-
-        System.out.println("Selected sandwich: " + selectedSandwich.getDisplayName() + " - $" + sandwichPrice);
-        System.out.println("Signature sandwich added to the order.");
-    }
-
-    private void cancelOrder() {
-        System.out.println("Thank you! Have a good day!");
-        System.exit(0);
+            switch (userInput) {
+                case 1 -> addSandwich();
+                case 2 -> addSignatureSandwich();
+                case 3 -> addDrink();
+                case 4 -> addChips();
+                case 5 -> checkOut();
+                case 0 -> cancelOrder();
+                default -> invalidInput();
+            }
+        } while (userInput != 0);
     }
 
     private static void addSandwich() {
 
-        // Prompt for sandwich size
-        System.out.println("Select the sandwich size:");
+        // Prompt for SANDWICH SIZE
+        System.out.println("\u001B[38;2;0;0;255mAdding custom sandwich...\u001B[0m");
+        System.out.println("\u001B[38;2;173;216;230mSelect a sandwich size: \nPlease enter a bracket option (number only).\u001B[0m");
         for (int i = 0; i < SANDWICH_SIZE.length; i++) {
-            System.out.println((i + 1) + ") " + SANDWICH_SIZE[i] + "\"");
+            System.out.println("[" + (i + 1) + "] " + SANDWICH_SIZE[i] + "\"");
         }
         int sizeChoice = scanner.nextInt();
         if (sizeChoice < 1 || sizeChoice > SANDWICH_SIZE.length) {
@@ -141,10 +110,10 @@ public class UserInterface {
         double sandwichSizePrice = SANDWICH_SIZE_PRICES[sizeChoice - 1];
 
 
-        // Prompt for bread selection
-        System.out.println("Select the bread:");
+        // Prompt for BREAD CHOICE
+        System.out.println("\u001B[38;2;173;216;230mSelect a bread: \nPlease enter a bracket option (number only).\u001B[0m");
         for (BreadChoice breadChoice : BreadChoice.values()) {
-            System.out.println(breadChoice.ordinal() + 1 + ") " + breadChoice.getDisplayName());
+            System.out.println("[" + (breadChoice.ordinal() + 1) + "] " + breadChoice.getDisplayName());
         }
         int breadChoiceIndex = scanner.nextInt();
         if (breadChoiceIndex < 1 || breadChoiceIndex > BreadChoice.values().length) {
@@ -155,10 +124,10 @@ public class UserInterface {
         double breadPrice = selectedBread.getPrice();
 
 
-        // Prompt for meat selection
-        System.out.println("Select the meats:");
+        // Prompt for MEAT CHOICE
+        System.out.println("\u001B[38;2;173;216;230mSelect meat(s): \nPlease enter a bracket option (number only).\nSeparate by comma, if multiple (e.g. 1,2,3)\u001B[0m");
         for (MeatChoice meatChoice : MeatChoice.values()) {
-            System.out.println(meatChoice.ordinal() + 1 + ") " + meatChoice.getDisplayName());
+            System.out.println("[" + (meatChoice.ordinal() + 1) + "] " + meatChoice.getDisplayName());
         }
         String meatsInput = scanner.next();
         String[] meatChoices = meatsInput.split(",");
@@ -178,8 +147,7 @@ public class UserInterface {
             }
         }
 
-
-        // Calculate cost of extra meat based on sandwich size
+        // Calculates cost of extra meat based on sandwich size
         double extraMeatCost = 0.0;
         if (sandwichSize == 4) {
             extraMeatCost = 0.50;
@@ -189,8 +157,8 @@ public class UserInterface {
             extraMeatCost = 1.50;
         }
 
-// Prompt for additional meat option
-        System.out.println("Add extra meat? (y/n)");
+        // Prompt for EXTRA MEAT
+        System.out.println("\u001B[38;2;173;216;230mAdd extra meat? (y/n)\u001B[0m");
         String extraMeatChoice = scanner.next();
         boolean extraMeat = extraMeatChoice.equalsIgnoreCase("y");
         if (extraMeat) {
@@ -198,10 +166,10 @@ public class UserInterface {
         }
 
 
-        // Prompt the user for cheese selection
-        System.out.println("Select the Cheese:");
+        // Prompt for CHEESE CHOICE
+        System.out.println("\u001B[38;2;173;216;230mSelect cheese(s): \nPlease enter a bracket option (number only).\nSeparate by comma, if multiple (e.g. 1,2,3)\u001B[0m");
         for (CheeseChoice cheeseChoice : CheeseChoice.values()) {
-            System.out.println((cheeseChoice.ordinal() + 1) + ") " + cheeseChoice.getDisplayName());
+            System.out.println("[" + (cheeseChoice.ordinal() + 1) + "] " + cheeseChoice.getDisplayName());
         }
 
         String cheeseInput = scanner.next();
@@ -218,8 +186,6 @@ public class UserInterface {
                 return;
             }
         }
-        ;
-
 
         // Calculate cost of Cheese based on sandwich size
         double cheesePrice = 0.0;
@@ -243,38 +209,38 @@ public class UserInterface {
 
 
         // Prompt for additional cheese option
-        System.out.println("Add extra cheese? (y/n)");
+        System.out.println("\u001B[38;2;173;216;230mAdd extra cheese? (y/n)\u001B[0m");
         String extraCheeseChoice = scanner.next();
         boolean extraCheese = extraCheeseChoice.equalsIgnoreCase("y");
         if (extraCheese) {
             cheesePrice += extraCheeseCost;
         }
 
-        // Prompt for sauce selection
-        System.out.println("Select the sauces (comma-separated):");
+        // Prompt for SAUCE CHOICE
+        System.out.println("\u001B[38;2;173;216;230mSelect sauce(s): \nPlease enter a bracket option (number only).\nSeparate by comma, if multiple (e.g. 1,2,3)\u001B[0m");
         for (SauceChoice sauceChoice : SauceChoice.values()) {
-            System.out.println(sauceChoice.ordinal() + 1 + ") " + sauceChoice.getSauce());
+            System.out.println("[" + (sauceChoice.ordinal() + 1) + "] " + sauceChoice.getSauceName());
         }
         String saucesInput = scanner.next();
         String[] sauceChoices = saucesInput.split(",");
-        List<SauceChoice> selectedSauces = new ArrayList<>();
+        List<String> selectedSauces = new ArrayList<>();
         double saucePrice = 0.0;
 
         for (String sauceChoice : sauceChoices) {
             int choice = Integer.parseInt(sauceChoice.trim());
             if (choice >= 1 && choice <= SauceChoice.values().length) {
                 SauceChoice selectedSauce = SauceChoice.values()[choice - 1];
-                selectedSauces.add(selectedSauce);
+                selectedSauces.add(selectedSauce.getSauceName());
                 saucePrice += selectedSauce.getPrice();
             } else {
                 System.out.println("Invalid choice. Cancelling sandwich addition.");
                 return;
             }
         }
-        // Prompt for RegularToppingChoice selection
-        System.out.println("Select the Regular Toppings (comma-separated):");
+        // Prompt for REGULAR TOPPING CHOICE
+        System.out.println("\u001B[38;2;173;216;230mSelect regular topping(s): \nPlease enter a bracket option (number only).\nSeparate by comma, if multiple (e.g. 1,2,3)\u001B[0m");
         for (RegularToppingChoice regularToppingChoice : RegularToppingChoice.values()) {
-            System.out.println((regularToppingChoice.ordinal() + 1) + ") " + regularToppingChoice.getRegulartoppings());
+            System.out.println("[" + (regularToppingChoice.ordinal() + 1) + "] " + regularToppingChoice.getRegulartoppings());
         }
         String regularToppingsInput = scanner.next();
         String[] regularToppingsChoices = regularToppingsInput.split(",");
@@ -292,11 +258,10 @@ public class UserInterface {
                 return;
             }
         }
-        //prompt user for Side selection
-        // Prompt for Side choice
-        System.out.println("Select the Side choices (comma-separated):");
+        // Prompt for SIDE CHOICE
+        System.out.println("\u001B[38;2;173;216;230mSelect side(s): \nPlease enter a bracket option (number only).\nSeparate by comma, if multiple (e.g. 1,2,3)\u001B[0m");
         for (SideChoice sideChoice : SideChoice.values()) {
-            System.out.println((sideChoice.ordinal() + 1) + ") " + sideChoice.getSideChoice());
+            System.out.println("[" + (sideChoice.ordinal() + 1) + "] " + sideChoice.getSideChoice());
         }
         String sideChoicesInput = scanner.next();
         String[] sideChoicesArray = sideChoicesInput.split(",");
@@ -314,32 +279,29 @@ public class UserInterface {
                 return;
             }
         }
-
-
-        System.out.println("Selected sandwich size: " + sandwichSize + "\"");
+        System.out.println("\u001B[38;2;173;216;230mSANDWICH SUMMARY: \u001B[0m");
+        System.out.println("Selected sandwich size: " + sandwichSize + "\" Inches");
         System.out.println("Sandwich size price: $" + sandwichSizePrice);
         System.out.println("Selected bread: " + selectedBread.getDisplayName());
         System.out.println("Bread price: $" + breadPrice);
         System.out.println("Selected meats: " + Arrays.toString(meats.toArray()).replace("[", "").replace("]", ""));
         System.out.println("Meat price: $" + meatPrice);
         System.out.println("Selected Cheese: " + Arrays.toString(cheese.toArray()).replace("[", "").replace("]", ""));
-        System.out.println("Cheese price :" + cheesePrice);
+        System.out.println("Cheese price: $" + cheesePrice);
         System.out.println("Selected Sauce: " + Arrays.toString(selectedSauces.toArray()).replace("[", "").replace("]", ""));
+        System.out.println("Sauce price: $" + saucePrice);
         System.out.println("Selected regular toppings: " + Arrays.toString(selectedRegularToppings.toArray()).replace("[", "").replace("]", ""));
         System.out.println("Regular toppings price: $" + regularToppingsPrice);
         System.out.println("Selected side choices: " + Arrays.toString(selectedSideChoices.toArray()).replace("[", "").replace("]", ""));
         System.out.println("Total side choices price: $" + sideChoicePrice);
 
-
         double sandwichTotalPrice = sandwichSizePrice + breadPrice + meatPrice + cheesePrice;
         orderEntries.add("Sandwich - Size: " + sandwichSize + "\" - $" + sandwichTotalPrice);
         totalPrice += sandwichTotalPrice;
 
-
-        System.out.println("Total price of sandwich is " + totalPrice);
-        System.out.println("Sandwich added to the order.");
+        System.out.println("\u001B[38;2;173;216;230mTotal price of sandwich is $" + totalPrice + "\u001B[0m");
+        System.out.println("\u001B[38;2;0;0;255mSandwich added to the order.\u001B[0m");
     }
-
 
     private static double getMeatPriceForSize(double meatPrice, double sandwichSize) {
         if (sandwichSize == 4) {
@@ -354,10 +316,34 @@ public class UserInterface {
         }
     }
 
+    private void addSignatureSandwich() {
+        System.out.println("\u001B[38;2;0;0;255mAdding signature sandwich...\u001B[0m");
+        System.out.println("\u001B[38;2;173;216;230mSelect a sandwich: \nPlease enter a bracket option (number only).\u001B[0m");
+        for (SignatureSandwichChoice sandwichChoice : SignatureSandwichChoice.values()) {
+            System.out.println("[" + (sandwichChoice.ordinal() + 1) + "] " + sandwichChoice.getDisplayName() + " - $" + sandwichChoice.getPrice());
+        }
+
+        int choice = scanner.nextInt();
+        if (choice < 1 || choice > SignatureSandwichChoice.values().length) {
+            System.out.println("Invalid choice. Signature sandwich not added to the order.");
+            return;
+        }
+
+        SignatureSandwichChoice selectedSandwich = SignatureSandwichChoice.values()[choice - 1];
+        double sandwichPrice = selectedSandwich.getPrice();
+
+        orderEntries.add("Signature Sandwich - " + selectedSandwich.getDisplayName() + ": $" + sandwichPrice);
+        totalPrice += sandwichPrice;
+
+        System.out.println("Selected signature sandwich: " + selectedSandwich.getDisplayName() + "\nSignature sandwich price: $" + sandwichPrice);
+        System.out.println("\u001B[38;2;0;0;255mSignature sandwich added to the order.\u001B[0m");
+    }
+
     private static void addDrink() {
-        System.out.println("Select the drink size:");
+        System.out.println("\u001B[38;2;0;0;255mAdding drink...\u001B[0m");
+        System.out.println("\u001B[38;2;173;216;230mSelect drink size: \nPlease enter a bracket option (number only).\u001B[0m");
         for (DrinkChoice drinkChoice : DrinkChoice.values()) {
-            System.out.println(drinkChoice.ordinal() + 1 + ") " + drinkChoice.getSize() + " - $" + drinkChoice.getPrice());
+            System.out.println("[" + (drinkChoice.ordinal() + 1) + "] " + drinkChoice.getSize() + " - $" + drinkChoice.getPrice());
         }
 
         int sizeChoice = scanner.nextInt();
@@ -369,9 +355,9 @@ public class UserInterface {
         DrinkChoice selectedDrink = DrinkChoice.values()[sizeChoice - 1];
         double drinkPrice = selectedDrink.getPrice();
 
-        System.out.println("Select the drink flavor:");
+        System.out.println("\u001B[38;2;173;216;230mSelect the drink flavor: \u001B[0m");
         for (FlavorChoice flavorChoice : FlavorChoice.values()) {
-            System.out.println(flavorChoice.ordinal() + 1 + ") " + flavorChoice.getFlavor() + " - $" + flavorChoice.getPrice());
+            System.out.println("[" + (flavorChoice.ordinal() + 1) + "] " + flavorChoice.getFlavor() + " - $" + flavorChoice.getPrice());
         }
 
         int flavorChoice = scanner.nextInt();
@@ -387,19 +373,19 @@ public class UserInterface {
         orderEntries.add("Drink - " + selectedDrink.getSize() + " - $" + drinkPrice);
         totalPrice += drinkPrice;
 
-        System.out.println("Selected drink: " + selectedDrink.getSize() + " - $" + drinkPrice);
-        System.out.println("Drink added to the order.");
-
+        System.out.println("Selected drink: " + selectedDrink.getSize() + " " + selectedFlavor.getFlavor() + "\nDrink price: $" + drinkPrice);
+        System.out.println("\u001B[38;2;0;0;255mDrink added to the order.\u001B[0m");
     }
 
     private static void addChips() {
-        System.out.println("Choose the chips to add to your order:");
+        System.out.println("\u001B[38;2;0;0;255mAdding chips...\u001B[0m");
+        System.out.println("\u001B[38;2;173;216;230mSelect chips: \nPlease enter a bracket option (number only).\u001B[0m");
 
-        String[] chipsOptions = {"Regular", "BBQ", "Salt and Vinegar", "Sour Cream and Onion"};
+        String[] chipsOptions = {"Original", "BBQ", "Salt and Vinegar", "Sour Cream and Onion"};
         double[] chipsPrices = {1.50, 1.75, 1.75, 1.75};
 
         for (int i = 0; i < chipsOptions.length; i++) {
-            System.out.println((i + 1) + ". " + chipsOptions[i] + " ($" + chipsPrices[i] + ")");
+            System.out.println("[" + (i + 1) + "] " + chipsOptions[i] + " - $" + chipsPrices[i]);
         }
 
         int choice = scanner.nextInt();
@@ -407,39 +393,59 @@ public class UserInterface {
         if (choice >= 1 && choice <= chipsOptions.length) {
             orderEntries.add(chipsOptions[choice - 1] + " - $" + chipsPrices[choice - 1]);
             totalPrice += chipsPrices[choice - 1];
-            System.out.println(chipsOptions[choice - 1] + " added to the order.");
-            System.out.println("It will be an extra $" + chipsPrices[choice - 1] + ".");
+            System.out.println("That will be an extra $" + chipsPrices[choice - 1] + ".");
+            System.out.println("\u001B[38;2;0;0;255m"+chipsOptions[choice - 1] + " chips added to the order.\u001B[0m");
         } else {
             System.out.println("Invalid choice. Chips not added to the order.");
         }
     }
 
     private static void checkOut() {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss");
-        LocalDateTime now = LocalDateTime.now();
-        String fileName = "order_" + dtf.format(now) + ".csv";
-        try (FileWriter writer = new FileWriter(fileName)) {
-            writer.append("RECEIPT\n");
-            for (String entry : orderEntries) {
-                writer.append(entry).append("\n");
+        try {
+            // Create the directory if it doesn't exist
+            String directoryPath = "Receipts";
+            File directory = new File(directoryPath);
+            if (!directory.exists()) {
+                directory.mkdir();
             }
-            writer.append("Total Price: $").append(String.valueOf(totalPrice));
-            System.out.println("Order summary:");
+
+            // Generate the file name using the current date and time
+            LocalDateTime now = LocalDateTime.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd_HH.mm.ss");
+            String fileName = directoryPath + "/" + now.format(formatter) + ".csv";
+
+            // Write the receipt to the file
+            FileWriter writer = new FileWriter(fileName);
+            writer.write("DELI-cious Sandwiches Receipt\n");
+            writer.write(now.format(DateTimeFormatter.ofPattern("MMMM dd, yyyy")) + "\n");
+            writer.write(now.format(DateTimeFormatter.ofPattern("HH:mm")) + "\n");
+            writer.write("---------------------------------------------\n");
+            writer.write("Item\t\t\tItem Price\n");
             for (String entry : orderEntries) {
-                System.out.println(entry);
+                writer.write(entry + "\n");
             }
-            System.out.println("Total price: $" + totalPrice);
-            System.out.println("Order written to " + fileName);
+            writer.write("---------------------------------------------\n");
+            writer.write("Total Price: " + totalPrice + "\n");
+            writer.close();
+
+            System.out.println("Receipt saved successfully!");
         } catch (IOException e) {
-            System.out.println("Failed to write the order to a file.");
+            System.out.println("An error occurred while saving the receipt.");
+            e.printStackTrace();
         }
-        orderEntries.clear();
-        totalPrice = 0.0;
     }
 
-
-    public static void main(String[] args) {
-        UserInterface ui = new UserInterface();
-        ui.display();
+    private void cancelOrder() {
+        System.out.println("Thank you! Have a good day!");
+        System.exit(0);
     }
+
+    public void invalidInput() {
+        System.out.println("\u001B[38;2;139;0;0mInvalid input. Please try again.\u001B[0m");
+    }
+
+    public void horizontalLine() {
+        System.out.println("\u001B[38;2;0;0;139m-----------------------------------------------------------------------------------------------------------------\u001B[0m");
+    }
+
 }
