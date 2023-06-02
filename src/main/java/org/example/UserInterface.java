@@ -21,7 +21,14 @@ public class UserInterface {
     }
 
     public static void displayHome() {
-        System.out.println("Welcome to our Deli/shop! How may I help you? ");
+        System.out.println("\u001B[31m ___  ___ _    ___     ___ ___ ___  _   _ ___     \u001B[0m");
+        System.out.println("\u001B[31m|   \\| __| |  |_ _|__ / __|_ _/ _ \\| | | / __|    \u001B[0m");
+        System.out.println("\u001B[31m| |) | _|| |__ | |___| (__ | | (_) | |_| \\__ \\    \u001B[0m");
+        System.out.println("\u001B[31m|___/|___|____|___|__ \\___|___\\___/_\\___/|___/___ \u001B[0m");
+        System.out.println("\u001B[31m / __| /_\\ | \\| |   \\ \\    / /_ _/ __| || | __/ __|\u001B[0m");
+        System.out.println("\u001B[31m \\__ \\/ _ \\| .` | |) \\ \\/\\/ / | | (__| __ | _|\\__ \\\u001B[0m");
+        System.out.println("\u001B[31m |___/_/ \\_\\_|\\_|___/ \\_/\\_/ |___\\___|_||_|___|___/\u001B[0m");
+        System.out.println("\n Welcome to our Deli!  \n Choose an option from our menu. ");
         System.out.println("\nOur Menu: ");
         System.out.println("1) New Order");
         System.out.println("2) Exit");
@@ -79,13 +86,14 @@ public class UserInterface {
     }
 
     private static void displayOptions() {
-        System.out.println("DELI-cious - Order Screen");
-        System.out.println("Choose an option:");
-        System.out.println("1) Add Sandwich");
-        System.out.println("2) Add Drink");
-        System.out.println("3) Add Chips");
-        System.out.println("4) Checkout");
-        System.out.println("0) Cancel Order");
+        System.out.println("\u001B[34m------------- Order Screen----------\u001B[0m");
+        System.out.println("\u001B[34mChoose an option:\u001B[0m");
+        System.out.println("\u001B[34m1) Add Sandwich\u001B[0m");
+        System.out.println("\u001B[34m2) Add Drink\u001B[0m");
+        System.out.println("\u001B[34m3) Add Chips\u001B[0m");
+        System.out.println("\u001B[34m4) Checkout\u001B[0m");
+        System.out.println("\u001B[34m0) Cancel Order\u001B[0m");
+        System.out.println("\u001B[34m-------------------------------------\u001B[0m");
     }
 
     private static void addSandwich() {
@@ -161,7 +169,7 @@ public class UserInterface {
             System.out.println(cheeseChoice.ordinal() + 1 + ") " + cheeseChoice.getDisplayName());
         }
         String cheeseInput = scanner.next();
-        String[] cheeseChoices = meatsInput.split(",");
+        String[] cheeseChoices = cheeseInput.split(",");
         List<String> cheeses = new ArrayList<>();
         double cheesePrice = 0.0;
 
@@ -234,7 +242,7 @@ public class UserInterface {
         System.out.println("Bread price: $" + breadPrice);
         System.out.println("Selected meats: " + selectedMeatsString);
         System.out.println("Meat price: $" + meatPrice);
-        System.out.println("Selected cheeses: " + cheeses);
+        System.out.println("Selected cheeses: " + cheesePrice);
         System.out.println("Selected sauces: " + selectedSaucesString);
         System.out.println("Sauce included: $" + saucePrice);
 
@@ -260,21 +268,21 @@ public class UserInterface {
             return meatPrice * 1.00;  // Default meat price
         }
     }
+
     private static double getCheesePriceForSize(double cheesePrice, double sandwichSize) {
         if (sandwichSize == 4) {
-            return cheesePrice;  // Meat price for 4-inch sandwich
+            return cheesePrice;  // Cheese price for 4-inch sandwich
         } else if (sandwichSize == 8) {
-            return cheesePrice + 0.75;  // Meat price for 8-inch sandwich
+            return cheesePrice + 0.75;  // Cheese price for 8-inch sandwich
         } else if (sandwichSize == 12) {
-            return cheesePrice + 1.50;  // Meat price for 12-inch sandwich
+            return cheesePrice + 1.50;  // Cheese price for 12-inch sandwich
         } else {
             System.out.println("Invalid sandwich size.");
-            return cheesePrice * 1.00;  // Default meat price
+            return cheesePrice * 1.00;  // Default Cheese price
         }
     }
-    private static void addDrink() {
-        System.out.println("Adding a drink to the order...");
 
+    private static void addDrink() {
         System.out.println("Select the drink size:");
         for (DrinkChoice drinkChoice : DrinkChoice.values()) {
             System.out.println(drinkChoice.ordinal() + 1 + ") " + drinkChoice.getSize() + " - $" + drinkChoice.getPrice());
@@ -289,25 +297,47 @@ public class UserInterface {
         DrinkChoice selectedDrink = DrinkChoice.values()[sizeChoice - 1];
         double drinkPrice = selectedDrink.getPrice();
 
+        System.out.println("Select the drink flavor:");
+        for (DrinkFlavorChoice flavorChoice : DrinkFlavorChoice.values()) {
+            System.out.println(flavorChoice.ordinal() + 1 + ") " + flavorChoice.getFlavor() + " - $" + flavorChoice.getPrice());
+        }
+
+        int flavorChoice = scanner.nextInt();
+        if (flavorChoice < 1 || flavorChoice > DrinkFlavorChoice.values().length) {
+            System.out.println("Invalid choice. Cancelling drink addition.");
+            return;
+        }
+
+        DrinkFlavorChoice selectedFlavor = DrinkFlavorChoice.values()[flavorChoice - 1];
+        double flavorPrice = selectedFlavor.getPrice();
+
+
         orderEntries.add("Drink - " + selectedDrink.getSize() + " - $" + drinkPrice);
         totalPrice += drinkPrice;
 
         System.out.println("Selected drink: " + selectedDrink.getSize() + " - $" + drinkPrice);
         System.out.println("Drink added to the order.");
+
     }
 
     private static void addChips() {
-        System.out.println("Adding chips to the order...");
-        System.out.println("Do you want to add chips? (Y/N)");
+        System.out.println("Choose the chips to add to your order:");
 
-        String choice = scanner.next();
-        if (choice.equalsIgnoreCase("Y")) {
-            orderEntries.add("Chips - $1.50");
-            totalPrice += 1.50;
-            System.out.println("Chips added to the order.");
-            System.out.println("It will be an extra $1.50.");
+        String[] chipsOptions = {"Regular", "BBQ", "Salt and Vinegar", "Sour Cream and Onion"};
+        double[] chipsPrices = {1.50, 1.75, 1.75, 1.75};
+
+        for (int i = 0; i < chipsOptions.length; i++) {
+            System.out.println((i + 1) + ". " + chipsOptions[i] + " ($" + chipsPrices[i] + ")");
+        }
+
+        int choice = scanner.nextInt();
+        if (choice >= 1 && choice <= chipsOptions.length) {
+            orderEntries.add(chipsOptions[choice - 1] + " - $" + chipsPrices[choice - 1]);
+            totalPrice += chipsPrices[choice - 1];
+            System.out.println(chipsOptions[choice - 1] + " added to the order.");
+            System.out.println("It will be an extra $" + chipsPrices[choice - 1] + ".");
         } else {
-            System.out.println("Chips not added to the order.");
+            System.out.println("Invalid choice. Chips not added to the order.");
         }
     }
 
@@ -342,5 +372,6 @@ public class UserInterface {
     private static void cancelOrder() {
         System.out.println("Order canceled.");
     }
+
 }
 
