@@ -1,4 +1,4 @@
-package org.example;
+package src.main.java.org.example;
 
 public enum MeatChoice {
     STEAK("Steak", 1.00),
@@ -26,6 +26,5 @@ public enum MeatChoice {
 
 }
 
-}
 
 

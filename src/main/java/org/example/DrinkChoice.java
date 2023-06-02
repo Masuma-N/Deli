@@ -1,4 +1,4 @@
-package org.example;
+package src.main.java.org.example;
 
 public enum DrinkChoice {
 
@@ -21,3 +21,4 @@ public enum DrinkChoice {
     public double getPrice() {
         return price;
     }
+}
