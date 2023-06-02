@@ -121,7 +121,7 @@ public class UserInterface {
     }
 
     private void cancelOrder() {
-        System.out.println("Your order was cancelled!");
+        System.out.println("Thank you! Have a good day!");
         System.exit(0);
     }
 
@@ -415,38 +415,28 @@ public class UserInterface {
     }
 
     private static void checkOut() {
-        System.out.println("Order Summary:");
-        for (String entry : orderEntries) {
-            System.out.println(entry);
-        }
-        System.out.println("Total Price: $" + totalPrice);
-
-        //Generate unique file name using timestamp
-
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss");
         LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
-        String timestamp = now.format(formatter);
-        String fileName = "order_" + timestamp + ".csv";
-
-        // Save order to CSV file
-        try (FileWriter fileWriter = new FileWriter(fileName)) {
+        String fileName = "order_" + dtf.format(now) + ".csv";
+        try (FileWriter writer = new FileWriter(fileName)) {
+            writer.append("RECEIPT\n");
             for (String entry : orderEntries) {
-                fileWriter.append("Receipt\n");
-                fileWriter.append(entry).append("\n");
+                writer.append(entry).append("\n");
             }
-            fileWriter.append("Total Price: $").append(String.valueOf(totalPrice));
-            System.out.println("Order saved to the CSV file: " + fileName);
-            System.out.println();
-            System.out.println("Thank You.");
-            System.exit(0);
-            System.out.println();
+            writer.append("Total Price: $").append(String.valueOf(totalPrice));
+            System.out.println("Order summary:");
+            for (String entry : orderEntries) {
+                System.out.println(entry);
+            }
+            System.out.println("Total price: $" + totalPrice);
+            System.out.println("Order written to " + fileName);
         } catch (IOException e) {
-            System.out.println("An error occurred while saving the order to the CSV file.");
+            System.out.println("Failed to write the order to a file.");
         }
-        // Clear order entries and total price
         orderEntries.clear();
         totalPrice = 0.0;
     }
+
 
     public static void main(String[] args) {
         UserInterface ui = new UserInterface();
