@@ -32,10 +32,10 @@ There are seven (7) screens in this application:
 * Chips Order Screen
 * Checkout Screen
 
-#### Home Screen
+####  [ Home Screen ]
 ![Home Screen Image](/Documents/README_Images/HomeScreen.png)
 
-#### Order Screen
+####  [ Order Screen ]
 ![Order Screen Image](/Documents/README_Images/OrderScreen.png)
 
 #### Custom Sandwich Order Screen
