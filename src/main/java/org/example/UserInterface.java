@@ -64,7 +64,7 @@ public class UserInterface {
 
     private void startOrder() {
 
-    private static Scanner scanner = new Scanner(System.in);
+//    private static Scanner scanner = new Scanner(System.in);
     private static double totalPrice = 0.0;
 
     public static void main(String[] args) {
