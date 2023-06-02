@@ -1,4 +1,4 @@
-package org.example;
+package src.main.java.org.example;
 
 public enum CheeseChoice {
 
@@ -6,20 +6,6 @@ public enum CheeseChoice {
     PROVOLONE("Provolone Cheese", 0.75),
     CHEDDAR("Cheddar Cheese", 0.75),
     SWISS("Swiss Cheese", 0.75);
-
-
-    AMERICAN("American",0.75 ),
-    PROVOLONE("Provolone",0.75),
-    CHEDDAR("Cheddar",0.75),
-    SWISS("Swiss",0.75);
-
-    AMERICAN("AMERICAN",0.75 ),
-    PROVOLONE("Provolone",0.75),
-   CHEDDAR("Cheddar",0.75),
-   SWISS("Swiss",0.75);
-
-
-
 
     private final String displayName;
     private final double price;
@@ -37,5 +23,3 @@ public enum CheeseChoice {
         return price;
     }
 }
-
-

@@ -6,18 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="414e2768-6b8d-4914-8d59-78e64a894e61" name="Changes" comment="initial commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Deli/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Deli/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Deli/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Deli/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Deli/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Deli/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Deli/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Deli/Documents/UML_diagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Deli/org/example/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Deli/org/example/Order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Deli/org/example/UserInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Deli/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/org/example/BreadChoice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/org/example/DrinkChoice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/org/example/MeatChoice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/org/example/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/org/example/UserInterface.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +23,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -57,17 +52,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/LearnToCode_Capstones/Deli&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\LearnToCode_Capstones\Deli" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Documents" />
     </key>
@@ -151,7 +150,98 @@
       <option name="project" value="LOCAL" />
       <updated>1685542618561</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="initial commit">
+      <created>1685543349212</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1685543349213</updated>
+    </task>
+    <task id="LOCAL-00012" summary="initial commit">
+      <created>1685544307084</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1685544307085</updated>
+    </task>
+    <task id="LOCAL-00013" summary="initial commit">
+      <created>1685546865113</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1685546865113</updated>
+    </task>
+    <task id="LOCAL-00014" summary="initial commit">
+      <created>1685556259825</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1685556259826</updated>
+    </task>
+    <task id="LOCAL-00015" summary="initial commit">
+      <created>1685556549171</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1685556549172</updated>
+    </task>
+    <task id="LOCAL-00016" summary="initial commit">
+      <created>1685556653235</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1685556653236</updated>
+    </task>
+    <task id="LOCAL-00017" summary="initial commit">
+      <created>1685557927266</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1685557927267</updated>
+    </task>
+    <task id="LOCAL-00018" summary="initial commit">
+      <created>1685560004170</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1685560004170</updated>
+    </task>
+    <task id="LOCAL-00019" summary="initial commit">
+      <created>1685561711515</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1685561711515</updated>
+    </task>
+    <task id="LOCAL-00020" summary="initial commit">
+      <created>1685561834798</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1685561834799</updated>
+    </task>
+    <task id="LOCAL-00021" summary="initial commit">
+      <created>1685563239709</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1685563239709</updated>
+    </task>
+    <task id="LOCAL-00022" summary="initial commit">
+      <created>1685626814363</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1685626814363</updated>
+    </task>
+    <task id="LOCAL-00023" summary="initial commit">
+      <created>1685627212628</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1685627212629</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
