@@ -408,7 +408,6 @@ public class UserInterface {
             if (!directory.exists()) {
                 directory.mkdir();
             }
-
             // Generate the file name using the current date and time
             LocalDateTime now = LocalDateTime.now();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd_HH.mm.ss");
